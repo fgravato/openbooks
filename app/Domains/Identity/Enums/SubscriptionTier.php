@@ -11,6 +11,16 @@ enum SubscriptionTier: string
     case Premium = 'premium';
     case Select = 'select';
 
+    public function label(): string
+    {
+        return match ($this) {
+            self::Lite => 'Lite',
+            self::Plus => 'Plus',
+            self::Premium => 'Premium',
+            self::Select => 'Select',
+        };
+    }
+
     public function features(): array
     {
         return match ($this) {

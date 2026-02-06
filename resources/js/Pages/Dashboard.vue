@@ -1,64 +1,63 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
 import AppLayout from '@/Layouts/AppLayout.vue';
+import StatCard from '@/Components/UI/StatCard.vue';
+import Card from '@/Components/UI/Card.vue';
+import Table from '@/Components/UI/Table.vue';
+import Badge from '@/Components/UI/Badge.vue';
+import StatusBadge from '@/Components/UI/StatusBadge.vue';
+import { useCurrency } from '@/Composables/useCurrency';
 
-defineProps<{
-  summary: {
-    open_invoices: number;
-    overdue_invoices: number;
-    monthly_revenue_cents: number;
-    active_clients: number;
+const { formatCurrency } = useCurrency();
+
+const props = defineProps<{
+  stats: {
+    revenue: number;
+    outstanding: number;
+    overdue: number;
+    expenses: number;
   };
-  activity: Array<{ id: number; label: string; timestamp: string }>;
-  context: {
-    user_name?: string | null;
-    organization_name?: string | null;
-  };
+  recentInvoices: any[];
 }>();
 
+const columns = [
+  { key: 'invoice_number', label: 'Number' },
+  { key: 'client', label: 'Client' },
+  { key: 'total', label: 'Total', align: 'right' as const },
+  { key: 'status', label: 'Status' },
+];
 </script>
 
 <template>
   <AppLayout title="Dashboard">
-    <Head title="Dashboard" />
-
-    <section class="rounded-xl2 border border-brand-100 bg-white/90 p-6 shadow-panel">
-      <p class="text-sm uppercase tracking-wider text-brand-600">Welcome back</p>
-      <h1 class="mt-2 font-display text-3xl font-bold text-slate-900">Hello, {{ context.user_name ?? 'there' }}</h1>
-      <p class="mt-1 text-sm text-slate-600">Organization: {{ context.organization_name ?? 'Not configured' }}</p>
-    </section>
-
-    <section class="mt-6 grid gap-4 md:grid-cols-4">
-      <article class="rounded-xl border border-slate-200 bg-white p-4">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Open invoices</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">{{ summary.open_invoices }}</p>
-      </article>
-      <article class="rounded-xl border border-slate-200 bg-white p-4">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Overdue</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">{{ summary.overdue_invoices }}</p>
-      </article>
-      <article class="rounded-xl border border-slate-200 bg-white p-4">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Monthly revenue</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">${{ (summary.monthly_revenue_cents / 100).toFixed(2) }}</p>
-      </article>
-      <article class="rounded-xl border border-slate-200 bg-white p-4">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Active clients</p>
-        <p class="mt-2 text-2xl font-semibold text-slate-900">{{ summary.active_clients }}</p>
-      </article>
-    </section>
-
-    <section class="mt-6 rounded-xl border border-slate-200 bg-white p-5">
-      <div class="flex items-center justify-between">
-        <h2 class="text-base font-semibold text-slate-900">Recent activity</h2>
-        <Link :href="route('2fa.setup')" class="text-sm text-brand-600 hover:text-brand-700">Security setup</Link>
+    <div class="space-y-6">
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <StatCard title="Revenue (Monthly)" :value="formatCurrency(stats.revenue)" change="12%" changeType="increase" />
+        <StatCard title="Outstanding" :value="formatCurrency(stats.outstanding)" />
+        <StatCard title="Overdue" :value="formatCurrency(stats.overdue)" changeType="decrease" />
+        <StatCard title="Expenses (Monthly)" :value="formatCurrency(stats.expenses)" />
       </div>
 
-      <ul class="mt-4 space-y-3">
-        <li v-for="item in activity" :key="item.id" class="rounded-lg bg-slate-50 px-3 py-2">
-          <p class="text-sm text-slate-700">{{ item.label }}</p>
-          <p class="text-xs text-slate-500">{{ item.timestamp }}</p>
-        </li>
-      </ul>
-    </section>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card title="Recent Invoices">
+          <Table :columns="columns" :data="recentInvoices">
+            <template #cell-client="{ item }">
+              {{ item.client?.name }}
+            </template>
+            <template #cell-total="{ item }">
+              {{ formatCurrency(item.total, item.currency_code) }}
+            </template>
+            <template #cell-status="{ item }">
+              <StatusBadge :status="item.status" type="invoice" />
+            </template>
+          </Table>
+        </Card>
+
+        <Card title="Revenue Overview">
+          <div class="h-64 flex items-center justify-center border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-lg">
+            <p class="text-gray-500">Chart will be here</p>
+          </div>
+        </Card>
+      </div>
+    </div>
   </AppLayout>
 </template>

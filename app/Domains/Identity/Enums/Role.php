@@ -14,6 +14,19 @@ enum Role: string
     case Accountant = 'accountant';
     case Client = 'client';
 
+    public function label(): string
+    {
+        return match ($this) {
+            self::Owner => 'Owner',
+            self::Admin => 'Administrator',
+            self::Manager => 'Manager',
+            self::Employee => 'Employee',
+            self::Contractor => 'Contractor',
+            self::Accountant => 'Accountant',
+            self::Client => 'Client',
+        };
+    }
+
     public function permissions(): array
     {
         return match ($this) {

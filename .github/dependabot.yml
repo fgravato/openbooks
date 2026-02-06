@@ -1,0 +1,65 @@
+version: 2
+
+updates:
+  # Composer dependencies
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "fgravato"
+    assignees:
+      - "fgravato"
+    commit-message:
+      prefix: "⬆️ "
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "php"
+    ignore:
+      - dependency-name: "php"
+        update-types: ["version-update:semver-major"]
+
+  # NPM dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "fgravato"
+    assignees:
+      - "fgravato"
+    commit-message:
+      prefix: "⬆️ "
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "javascript"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "fgravato"
+    assignees:
+      - "fgravato"
+    commit-message:
+      prefix: "👷 "
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "ci/cd"

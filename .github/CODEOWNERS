@@ -1,0 +1,49 @@
+# Code Owners for OpenBooks
+# Each line is a file pattern followed by one or more owners
+
+# Global fallback - all files require review from maintainers
+* @fgravato
+
+# Domain-specific ownership
+## Identity and Authentication
+/app/Domains/Identity/ @fgravato
+/app/Http/Middleware/ @fgravato
+/app/Http/Controllers/Auth/ @fgravato
+/config/fortify.php @fgravato
+/config/passport.php @fgravato
+
+## Core Business Domains
+/app/Domains/Invoicing/ @fgravato
+/app/Domains/Clients/ @fgravato
+/app/Domains/Payments/ @fgravato
+/app/Domains/Expenses/ @fgravato
+/app/Domains/TimeTracking/ @fgravato
+/app/Domains/Projects/ @fgravato
+/app/Domains/Accounting/ @fgravato
+/app/Domains/Estimates/ @fgravato
+/app/Domains/Reporting/ @fgravato
+
+## Infrastructure and Configuration
+/docker/ @fgravato
+/.github/workflows/ @fgravato
+/docker-compose.yml @fgravato
+/Dockerfile @fgravato
+
+## Frontend
+/resources/js/ @fgravato
+/resources/views/ @fgravato
+/resources/css/ @fgravato
+/vite.config.ts @fgravato
+tailwind.config.ts @fgravato
+
+## Database
+/database/migrations/ @fgravato
+/database/seeders/ @fgravato
+/database/factories/ @fgravato
+
+# Critical files requiring extra scrutiny
+/app/Traits/BelongsToOrganization.php @fgravato
+/app/Scopes/OrganizationScope.php @fgravato
+/app/Services/TenantManager.php @fgravato
+/config/tenancy.php @fgravato
+/.env.example @fgravato

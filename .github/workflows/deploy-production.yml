@@ -1,0 +1,210 @@
+name: Deploy to Production
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deploy (e.g., v1.0.0)'
+        required: true
+        type: string
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  pre-deploy-checks:
+    name: Pre-Deploy Checks
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.version || github.event.release.tag_name }}
+
+      - name: Run tests
+        uses: ./.github/workflows/ci.yml
+
+  backup-database:
+    name: Backup Database
+    runs-on: ubuntu-latest
+    needs: pre-deploy-checks
+    environment: production
+    
+    steps:
+      - name: Create database backup
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USER }}
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          script: |
+            BACKUP_DIR="/var/backups/openbooks/$(date +%Y%m%d_%H%M%S)"
+            mkdir -p $BACKUP_DIR
+            mysqldump -u ${{ secrets.DB_USER }} -p'${{ secrets.DB_PASSWORD }}' ${{ secrets.DB_NAME }} | gzip > $BACKUP_DIR/database.sql.gz
+            echo "Backup created at $BACKUP_DIR"
+
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [pre-deploy-checks, backup-database]
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.version || github.event.release.tag_name }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          tools: composer:v2
+
+      - name: Install Composer dependencies (no dev)
+        run: composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - name: Build production assets
+        run: npm run build
+
+      - name: Deploy to production server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USER }}
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          port: ${{ secrets.PRODUCTION_PORT || '22' }}
+          script: |
+            DEPLOY_DIR="/var/www/openbooks"
+            RELEASE_DIR="$DEPLOY_DIR/releases/$(date +%Y%m%d%H%M%S)"
+            CURRENT_LINK="$DEPLOY_DIR/current"
+            STORAGE_DIR="$DEPLOY_DIR/shared/storage"
+            ENV_FILE="$DEPLOY_DIR/shared/.env"
+            
+            # Create release directory
+            mkdir -p $RELEASE_DIR
+            
+            # Extract application files
+            cd $RELEASE_DIR
+            # Code will be rsynced here by action
+            
+            # Link shared storage
+            rm -rf $RELEASE_DIR/storage
+            ln -s $STORAGE_DIR $RELEASE_DIR/storage
+            
+            # Link .env
+            ln -s $ENV_FILE $RELEASE_DIR/.env
+            
+            # Install dependencies
+            composer install --no-dev --optimize-autoloader --no-interaction
+            
+            # Run migrations (before switching)
+            php artisan migrate --force
+            
+            # Optimize
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan event:cache
+            
+            # Atomic switch
+            ln -sfn $RELEASE_DIR $CURRENT_LINK
+            
+            # Reload PHP-FPM
+            sudo systemctl reload php8.5-fpm
+            
+            # Restart queue workers
+            php artisan queue:restart
+            
+            # Health check
+            sleep 5
+            php artisan health:check || exit 1
+            
+            # Cleanup old releases (keep last 5)
+            cd $DEPLOY_DIR/releases && ls -t | tail -n +6 | xargs rm -rf
+            
+            echo "Production deployment completed!"
+
+      - name: Smoke tests
+        run: |
+          curl -sf ${{ secrets.PRODUCTION_URL }}/health || exit 1
+          curl -sf ${{ secrets.PRODUCTION_URL }}/api/v1/health || exit 1
+
+      - name: Notify on success
+        if: success()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "🚀 Production deployment successful",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*OpenBooks Production Deployed*\nVersion: ${{ github.event.inputs.version || github.event.release.tag_name }}\nBy: ${{ github.actor }}\n<${{ secrets.PRODUCTION_URL }}|View site>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Notify on failure
+        if: failure()
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: |
+            {
+              "text": "🚨 Production deployment failed",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*OpenBooks Production Deployment Failed*\nVersion: ${{ github.event.inputs.version || github.event.release.tag_name }}\nBy: ${{ github.actor }}\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View logs>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  rollback:
+    name: Rollback (on failure)
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: failure()
+    environment: production
+    
+    steps:
+      - name: Rollback to previous release
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USER }}
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          script: |
+            DEPLOY_DIR="/var/www/openbooks"
+            PREVIOUS_RELEASE=$(ls -t $DEPLOY_DIR/releases | sed -n '2p')
+            
+            if [ -n "$PREVIOUS_RELEASE" ]; then
+              ln -sfn $DEPLOY_DIR/releases/$PREVIOUS_RELEASE $DEPLOY_DIR/current
+              sudo systemctl reload php8.5-fpm
+              echo "Rolled back to $PREVIOUS_RELEASE"
+            else
+              echo "No previous release found for rollback"
+            fi
