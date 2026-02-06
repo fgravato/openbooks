@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RecurringExpenseFactory extends Factory
 {
-    protected string $model = RecurringExpense::class;
+    protected $model = RecurringExpense::class;
 
     public function definition(): array
     {

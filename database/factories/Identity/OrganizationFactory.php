@@ -11,7 +11,7 @@ use App\Domains\Identity\Models\Organization;
 
 class OrganizationFactory extends Factory
 {
-    protected string $model = Organization::class;
+    protected $model = Organization::class;
 
     public function definition(): array
     {

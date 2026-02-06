@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domains\Clients\Models;
 
+use Database\Factories\Clients\ClientFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 use App\Traits\BelongsToOrganization;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,9 +19,9 @@ class Client extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected string $table = 'clients';
+    protected $table = 'clients';
 
-    protected array $fillable = [
+    protected $fillable = [
         'first_name',
         'last_name',
         'company_name',
@@ -59,5 +62,9 @@ class Client extends Model
     public function projects(): HasMany
     {
         return $this->hasMany('App\\Domains\\Projects\\Models\\Project');
+    }
+    protected static function newFactory(): Factory
+    {
+        return ClientFactory::new();
     }
 }

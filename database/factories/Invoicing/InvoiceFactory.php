@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InvoiceFactory extends Factory
 {
-    protected string $model = Invoice::class;
+    protected $model = Invoice::class;
 
     private static array $sequenceByOrganization = [];
 

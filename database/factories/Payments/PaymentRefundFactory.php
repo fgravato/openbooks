@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PaymentRefundFactory extends Factory
 {
-    protected string $model = PaymentRefund::class;
+    protected $model = PaymentRefund::class;
 
     public function definition(): array
     {

@@ -13,11 +13,11 @@ class CreditNoteApplication extends Model
 {
     use HasFactory;
 
-    protected string $table = 'credit_note_applications';
+    protected $table = 'credit_note_applications';
 
     public bool $timestamps = false;
 
-    protected array $fillable = [
+    protected $fillable = [
         'credit_note_id',
         'invoice_id',
         'amount',

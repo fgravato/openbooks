@@ -9,9 +9,9 @@ use Illuminate\Console\Command;
 
 class ProcessRecurringInvoices extends Command
 {
-    protected string $signature = 'invoices:process-recurring';
+    protected $signature = 'invoices:process-recurring';
 
-    protected string $description = 'Generate invoices from due recurring profiles';
+    protected $description = 'Generate invoices from due recurring profiles';
 
     public function handle(RecurringInvoiceService $recurringInvoiceService): int
     {

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InvoiceProfileFactory extends Factory
 {
-    protected string $model = InvoiceProfile::class;
+    protected $model = InvoiceProfile::class;
 
     public function definition(): array
     {

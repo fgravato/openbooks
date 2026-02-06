@@ -23,9 +23,9 @@ class CreditNote extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected string $table = 'credit_notes';
+    protected $table = 'credit_notes';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'client_id',
         'credit_note_number',

@@ -24,9 +24,9 @@ class RecurringExpense extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'recurring_expenses';
+    protected $table = 'recurring_expenses';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'expense_category_id',
         'vendor',

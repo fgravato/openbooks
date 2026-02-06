@@ -10,9 +10,9 @@ use Illuminate\Console\Command;
 
 class SyncBankTransactions extends Command
 {
-    protected string $signature = 'bank:sync';
+    protected $signature = 'bank:sync';
 
-    protected string $description = 'Sync transactions from connected bank accounts';
+    protected $description = 'Sync transactions from connected bank accounts';
 
     public function handle(BankSyncService $bankSyncService): int
     {

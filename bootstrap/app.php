@@ -26,7 +26,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->trustProxies(at: TrustProxies::class);
-        $middleware->preventRequestsDuringMaintenance(PreventRequestsDuringMaintenance::class);
+        // $middleware->preventRequestsDuringMaintenance(PreventRequestsDuringMaintenance::class);
 
         $middleware->web(append: [
             HandleInertiaRequests::class,
