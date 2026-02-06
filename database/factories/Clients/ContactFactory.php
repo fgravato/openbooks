@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Database\Factories\Clients;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Domains\Clients\Models\Client;
+use App\Domains\Clients\Models\Contact;
+
+class ContactFactory extends Factory
+{
+    protected string $model = Contact::class;
+
+    public function definition(): array
+    {
+        return [
+            'client_id' => Client::factory(),
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->optional()->phoneNumber(),
+            'is_primary' => false,
+        ];
+    }
+}
