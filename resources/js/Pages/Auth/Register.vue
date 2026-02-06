@@ -1,84 +1,90 @@
 <script setup lang="ts">
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import AuthLayout from '@/Layouts/AuthLayout.vue';
+import Input from '@/Components/UI/Input.vue';
+import Button from '@/Components/UI/Button.vue';
+import { useForm, Link } from '@inertiajs/vue3';
 
 const form = useForm({
   name: '',
+  organization_name: '',
   email: '',
   password: '',
   password_confirmation: '',
-  organization_name: '',
-  organization_slug: '',
   terms: false,
 });
 
-const submit = (): void => {
-  form.post(route('register.store'));
-};
-
-const toSlug = (value: string): string =>
-  value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-
-const syncSlug = (): void => {
-  form.organization_slug = toSlug(form.organization_name);
+const submit = () => {
+  form.post(route('register'), {
+    onFinish: () => form.reset('password', 'password_confirmation'),
+  });
 };
 </script>
 
 <template>
-  <Head title="Register" />
+  <AuthLayout title="Create your account">
+    <form @submit.prevent="submit" class="space-y-6">
+      <Input
+        v-model="form.name"
+        label="Full Name"
+        :error="form.errors.name"
+        required
+        autofocus
+      />
+      
+      <Input
+        v-model="form.organization_name"
+        label="Company Name"
+        :error="form.errors.organization_name"
+        required
+      />
 
-  <div class="mx-auto mt-10 w-full max-w-2xl rounded-xl2 border border-brand-100 bg-white p-8 shadow-panel">
-    <h1 class="font-display text-3xl font-semibold text-slate-900">Create your OpenBooks workspace</h1>
+      <Input
+        v-model="form.email"
+        type="email"
+        label="Email address"
+        :error="form.errors.email"
+        required
+      />
 
-    <form class="mt-6 grid gap-4 md:grid-cols-2" @submit.prevent="submit">
-      <div class="md:col-span-2">
-        <label class="mb-1 block text-sm font-medium text-slate-700">Full name</label>
-        <input v-model="form.name" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2" required />
-        <p v-if="form.errors.name" class="mt-1 text-xs text-rose-600">{{ form.errors.name }}</p>
+      <Input
+        v-model="form.password"
+        type="password"
+        label="Password"
+        :error="form.errors.password"
+        required
+      />
+
+      <Input
+        v-model="form.password_confirmation"
+        type="password"
+        label="Confirm Password"
+        :error="form.errors.password_confirmation"
+        required
+      />
+
+      <div class="flex items-center">
+        <input
+          id="terms"
+          v-model="form.terms"
+          type="checkbox"
+          class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          required
+        />
+        <label for="terms" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">
+          I agree to the <a href="#" class="text-indigo-600 hover:text-indigo-500">Terms of Service</a> and <a href="#" class="text-indigo-600 hover:text-indigo-500">Privacy Policy</a>
+        </label>
       </div>
 
-      <div class="md:col-span-2">
-        <label class="mb-1 block text-sm font-medium text-slate-700">Email</label>
-        <input v-model="form.email" type="email" class="w-full rounded-lg border border-slate-300 px-3 py-2" required />
-        <p v-if="form.errors.email" class="mt-1 text-xs text-rose-600">{{ form.errors.email }}</p>
-      </div>
+      <Button type="submit" class="w-full" :loading="form.processing">
+        Create Account
+      </Button>
 
-      <div>
-        <label class="mb-1 block text-sm font-medium text-slate-700">Password</label>
-        <input v-model="form.password" type="password" class="w-full rounded-lg border border-slate-300 px-3 py-2" required />
-      </div>
-
-      <div>
-        <label class="mb-1 block text-sm font-medium text-slate-700">Confirm password</label>
-        <input v-model="form.password_confirmation" type="password" class="w-full rounded-lg border border-slate-300 px-3 py-2" required />
-      </div>
-
-      <div class="md:col-span-2">
-        <label class="mb-1 block text-sm font-medium text-slate-700">Organization name</label>
-        <input v-model="form.organization_name" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2" @input="syncSlug" required />
-      </div>
-
-      <div class="md:col-span-2">
-        <label class="mb-1 block text-sm font-medium text-slate-700">Organization slug</label>
-        <input v-model="form.organization_slug" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2" required />
-        <p class="mt-1 text-xs text-slate-500">Used for subdomain access: {{ form.organization_slug || 'your-org' }}.openbooks.test</p>
-      </div>
-
-      <label class="md:col-span-2 flex items-center gap-2 text-sm text-slate-700">
-        <input v-model="form.terms" type="checkbox" required />
-        I agree to the terms and privacy policy.
-      </label>
-
-      <button type="submit" class="md:col-span-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700" :disabled="form.processing">
-        Create account
-      </button>
+      <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+        Already have an account?
+        <Link :href="route('login')" class="font-medium text-indigo-600 hover:text-indigo-500">
+          Sign in
+        </Link>
+      </p>
     </form>
-
-    <p class="mt-4 text-sm text-slate-600">
-      Already registered?
-      <Link :href="route('login')" class="text-brand-600 hover:text-brand-700">Sign in</Link>
-    </p>
-  </div>
+  </AuthLayout>
 </template>

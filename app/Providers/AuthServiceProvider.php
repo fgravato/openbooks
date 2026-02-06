@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Domains\Expenses\Models\Expense;
+use App\Domains\Expenses\Models\ExpenseCategory;
+use App\Domains\Expenses\Policies\ExpenseCategoryPolicy;
+use App\Domains\Expenses\Policies\ExpensePolicy;
 use App\Domains\Invoicing\Models\Invoice;
 use App\Domains\Invoicing\Models\InvoiceProfile;
 use App\Domains\Invoicing\Policies\InvoicePolicy;
@@ -18,6 +22,8 @@ class AuthServiceProvider extends ServiceProvider
         Invoice::class => InvoicePolicy::class,
         InvoiceProfile::class => InvoiceProfilePolicy::class,
         Payment::class => PaymentPolicy::class,
+        Expense::class => ExpensePolicy::class,
+        ExpenseCategory::class => ExpenseCategoryPolicy::class,
     ];
 
     public function boot(): void

@@ -12,3 +12,5 @@ Artisan::command('inspire', function (): void {
 Schedule::command('invoices:check-overdue')->dailyAt('00:00');
 Schedule::command('invoices:process-recurring')->dailyAt('06:00');
 Schedule::command('invoices:send-reminders')->dailyAt('09:00');
+Schedule::command('expenses:process-recurring')->dailyAt('07:00');
+Schedule::command('bank:sync')->everySixHours();

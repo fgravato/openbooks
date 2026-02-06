@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Resources\Invoicing;
 
 use App\Http\Resources\Clients\ClientResource;
+use App\Http\Resources\Payments\PaymentResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -47,7 +48,7 @@ class InvoiceResource extends JsonResource
             'currency_code' => $this->currency_code,
             'subtotal' => $this->subtotal,
             'tax_amount' => $this->tax_amount,
-            'discount_amount' => 0, // Placeholder as it's not directly in model but used in calculation
+            'discount_amount' => 0, // Placeholder
             'total' => $this->total,
             'amount_paid' => $this->amount_paid,
             'amount_outstanding' => $this->amount_outstanding,
@@ -60,7 +61,7 @@ class InvoiceResource extends JsonResource
             'is_overdue' => $this->isOverdue(),
             'client' => new ClientResource($this->whenLoaded('client')),
             'lines' => InvoiceLineResource::collection($this->whenLoaded('lines')),
-            'payments' => JsonResource::collection($this->whenLoaded('payments')), // Placeholder for now
+            'payments' => PaymentResource::collection($this->whenLoaded('payments')),
             'created_at' => $this->created_at->toIso8601String(),
         ];
     }

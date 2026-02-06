@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use Database\Seeders\Expenses\ExpenseCategorySeeder;
+use Database\Seeders\Expenses\ExpenseSeeder;
 use Database\Seeders\Identity\OrganizationSeeder;
 use Database\Seeders\Identity\UserSeeder;
 use Database\Seeders\Invoicing\InvoiceProfileSeeder;
@@ -22,6 +24,8 @@ class DatabaseSeeder extends Seeder
             InvoiceTemplateSeeder::class,
             InvoiceProfileSeeder::class,
             InvoiceSeeder::class,
+            ExpenseCategorySeeder::class,
+            ExpenseSeeder::class,
             PaymentSeeder::class,
         ]);
     }

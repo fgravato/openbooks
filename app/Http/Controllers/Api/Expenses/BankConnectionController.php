@@ -7,11 +7,11 @@ namespace App\Http\Controllers\Api\Expenses;
 use App\Domains\Expenses\Models\BankConnection;
 use App\Domains\Expenses\Services\BankSyncService;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Expenses\BankConnectionResource;
 use App\Http\Requests\Expenses\StoreBankConnectionRequest;
 use App\Http\Requests\Expenses\UpdateBankConnectionRequest;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 /**
  * @group Bank Connections
@@ -25,10 +25,9 @@ class BankConnectionController extends Controller
     /**
      * List bank connections
      */
-    public function index(): JsonResource
+    public function index(): AnonymousResourceCollection
     {
-        $connections = BankConnection::all();
-        return JsonResource::collection($connections);
+        return BankConnectionResource::collection(BankConnection::query()->orderBy('name')->get());
     }
 
     /**
@@ -41,29 +40,37 @@ class BankConnectionController extends Controller
         $connection = BankConnection::create([
             'organization_id' => $request->user()->organization_id,
             'name' => $request->name,
+            'institution_name' => $request->institution_name,
+            'institution_id' => $request->institution_id,
             'access_token' => $tokenData['access_token'],
             'item_id' => $tokenData['item_id'],
+            'account_mask' => $request->account_mask,
+            'account_type' => $request->account_type,
+            'balance_current' => 0,
+            'balance_available' => 0,
+            'currency_code' => $request->input('currency_code', 'USD'),
             'is_active' => true,
         ]);
 
-        return response()->json(new JsonResource($connection), 201);
+        return response()->json(BankConnectionResource::make($connection), 201);
     }
 
     /**
      * Show bank connection
      */
-    public function show(BankConnection $connection): JsonResource
+    public function show(BankConnection $connection): BankConnectionResource
     {
-        return new JsonResource($connection);
+        return new BankConnectionResource($connection);
     }
 
     /**
      * Update bank connection
      */
-    public function update(UpdateBankConnectionRequest $request, BankConnection $connection): JsonResource
+    public function update(UpdateBankConnectionRequest $request, BankConnection $connection): BankConnectionResource
     {
         $connection->update($request->validated());
-        return new JsonResource($connection);
+
+        return new BankConnectionResource($connection);
     }
 
     /**

@@ -7,6 +7,8 @@ namespace App\Http\Controllers\Api\Expenses;
 use App\Domains\Expenses\Enums\ExpenseStatus;
 use App\Domains\Expenses\Models\Expense;
 use App\Domains\Expenses\Services\ExpenseApprovalService;
+use App\Domains\Expenses\Services\ExpenseCalculationService;
+use App\Domains\Expenses\Services\ReceiptProcessingService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Expenses\StoreExpenseRequest;
 use App\Http\Requests\Expenses\UpdateExpenseRequest;
@@ -15,7 +17,6 @@ use App\Http\Resources\Expenses\ExpenseResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -24,7 +25,9 @@ use Illuminate\Support\Facades\Storage;
 class ExpenseController extends Controller
 {
     public function __construct(
-        protected ExpenseApprovalService $approvalService
+        protected ExpenseApprovalService $approvalService,
+        protected ExpenseCalculationService $calculationService,
+        protected ReceiptProcessingService $receiptProcessingService,
     ) {}
 
     /**
@@ -70,7 +73,11 @@ class ExpenseController extends Controller
      */
     public function store(StoreExpenseRequest $request): ExpenseResource
     {
-        $expense = new Expense($request->validated());
+        $validated = $request->validated();
+        $taxPercent = isset($validated['tax_percent']) ? (float) $validated['tax_percent'] : 0;
+        $validated['tax_amount'] = $this->calculationService->calculateTaxAmount((int) $validated['amount'], $taxPercent);
+
+        $expense = new Expense($validated);
         $expense->organization_id = $request->user()->organization_id;
         $expense->user_id = $request->user()->id;
         $expense->status = ExpenseStatus::Pending;
@@ -90,13 +97,21 @@ class ExpenseController extends Controller
     /**
      * Update expense
      */
-    public function update(UpdateExpenseRequest $request, Expense $expense): ExpenseResource
+    public function update(UpdateExpenseRequest $request, Expense $expense): ExpenseResource|JsonResponse
     {
-        if (!$expense->canBeEdited()) {
+        if (! $expense->canBeEdited()) {
             return response()->json(['message' => 'Only pending expenses can be edited.'], 422);
         }
 
-        $expense->update($request->validated());
+        $validated = $request->validated();
+
+        if (array_key_exists('amount', $validated) || array_key_exists('tax_percent', $validated)) {
+            $amount = array_key_exists('amount', $validated) ? (int) $validated['amount'] : (int) $expense->amount;
+            $taxPercent = array_key_exists('tax_percent', $validated) ? (float) $validated['tax_percent'] : (float) ($expense->tax_percent ?? 0);
+            $validated['tax_amount'] = $this->calculationService->calculateTaxAmount($amount, $taxPercent);
+        }
+
+        $expense->update($validated);
 
         return new ExpenseResource($expense->load(['category', 'client']));
     }
@@ -146,16 +161,22 @@ class ExpenseController extends Controller
     /**
      * Upload receipt
      */
-    public function uploadReceipt(UploadReceiptRequest $request, Expense $expense): ExpenseResource
+    public function attachReceipt(UploadReceiptRequest $request, Expense $expense): ExpenseResource
     {
-        if ($expense->receipt_path) {
-            Storage::delete($expense->receipt_path);
+        $file = $request->file('file') ?? $request->file('receipt');
+
+        if ($file === null) {
+            abort(422, 'A receipt file is required.');
         }
 
-        $path = $request->file('receipt')->store("organizations/{$expense->organization_id}/receipts");
-        $expense->update(['receipt_path' => $path]);
+        $this->receiptProcessingService->uploadReceipt($expense, $file);
 
-        return new ExpenseResource($expense);
+        return new ExpenseResource($expense->fresh(['category', 'client', 'project', 'approvedBy']));
+    }
+
+    public function uploadReceipt(UploadReceiptRequest $request, Expense $expense): ExpenseResource
+    {
+        return $this->attachReceipt($request, $expense);
     }
 
     /**
@@ -163,10 +184,7 @@ class ExpenseController extends Controller
      */
     public function removeReceipt(Expense $expense): JsonResponse
     {
-        if ($expense->receipt_path) {
-            Storage::delete($expense->receipt_path);
-            $expense->update(['receipt_path' => null]);
-        }
+        $this->receiptProcessingService->deleteReceipt($expense);
 
         return response()->json(null, 204);
     }
@@ -176,7 +194,7 @@ class ExpenseController extends Controller
      */
     public function downloadReceipt(Expense $expense): \Symfony\Component\HttpFoundation\StreamedResponse
     {
-        if (!$expense->receipt_path) {
+        if (! $expense->receipt_path) {
             abort(404);
         }
 
