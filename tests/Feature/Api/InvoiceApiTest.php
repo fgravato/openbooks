@@ -33,7 +33,7 @@ test('can list invoices', function (): void {
         'client_id' => $this->client->id,
     ]);
 
-    $response = $this->getJson('/api/invoices');
+    $response = $this->getJson('/api/v1/invoices');
 
     $response->assertOk()
         ->assertJsonCount(3, 'data');
@@ -55,7 +55,7 @@ test('list invoices only shows invoices from current organization', function ():
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->getJson('/api/invoices');
+    $response = $this->getJson('/api/v1/invoices');
 
     $response->assertOk()
         ->assertJsonCount(2, 'data');
@@ -76,7 +76,7 @@ test('can filter invoices by status', function (): void {
         'status' => InvoiceStatus::Sent,
     ]);
 
-    $response = $this->getJson('/api/invoices?status=draft');
+    $response = $this->getJson('/api/v1/invoices?status=draft');
 
     $response->assertOk()
         ->assertJsonCount(2, 'data');
@@ -97,7 +97,7 @@ test('can filter invoices by client', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->getJson("/api/invoices?client_id={$this->client->id}");
+    $response = $this->getJson("/api/v1/invoices?client_id={$this->client->id}");
 
     $response->assertOk()
         ->assertJsonCount(2, 'data');
@@ -118,7 +118,7 @@ test('can search invoices by invoice number', function (): void {
         'invoice_number' => 'INV-2024-00456',
     ]);
 
-    $response = $this->getJson('/api/invoices?search=00123');
+    $response = $this->getJson('/api/v1/invoices?search=00123');
 
     $response->assertOk()
         ->assertJsonCount(1, 'data')
@@ -150,7 +150,7 @@ test('can create invoice', function (): void {
         ],
     ];
 
-    $response = $this->postJson('/api/invoices', $invoiceData);
+    $response = $this->postJson('/api/v1/invoices', $invoiceData);
 
     $response->assertCreated()
         ->assertJsonPath('data.status', 'draft')
@@ -183,7 +183,7 @@ test('can view single invoice', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->getJson("/api/invoices/{$invoice->id}");
+    $response = $this->getJson("/api/v1/invoices/{$invoice->id}");
 
     $response->assertOk()
         ->assertJsonPath('data.id', $invoice->id)
@@ -201,7 +201,7 @@ test('cannot view invoice from another organization', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->getJson("/api/invoices/{$invoice->id}");
+    $response = $this->getJson("/api/v1/invoices/{$invoice->id}");
 
     $response->assertNotFound();
 });
@@ -216,7 +216,7 @@ test('can update draft invoice', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->putJson("/api/invoices/{$invoice->id}", [
+    $response = $this->putJson("/api/v1/invoices/{$invoice->id}", [
         'client_id' => $this->client->id,
         'issue_date' => $invoice->issue_date->toDateString(),
         'due_date' => $invoice->due_date->toDateString(),
@@ -241,7 +241,7 @@ test('cannot update sent invoice', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->putJson("/api/invoices/{$invoice->id}", [
+    $response = $this->putJson("/api/v1/invoices/{$invoice->id}", [
         'client_id' => $this->client->id,
         'issue_date' => $invoice->issue_date->toDateString(),
         'due_date' => $invoice->due_date->toDateString(),
@@ -260,7 +260,7 @@ test('can delete draft invoice', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->deleteJson("/api/invoices/{$invoice->id}");
+    $response = $this->deleteJson("/api/v1/invoices/{$invoice->id}");
 
     $response->assertNoContent();
 
@@ -276,7 +276,7 @@ test('cannot delete sent invoice', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->deleteJson("/api/invoices/{$invoice->id}");
+    $response = $this->deleteJson("/api/v1/invoices/{$invoice->id}");
 
     $response->assertForbidden();
 });
@@ -294,7 +294,7 @@ test('employee without permission cannot access invoices', function (): void {
 
     Sanctum::actingAs($employee);
 
-    $response = $this->getJson('/api/invoices');
+    $response = $this->getJson('/api/v1/invoices');
 
     $response->assertOk()
         ->assertJsonCount(0, 'data');
@@ -314,7 +314,7 @@ test('accountant can view but not create invoices', function (): void {
     Sanctum::actingAs($accountant);
 
     // Can view
-    $response = $this->getJson("/api/invoices/{$invoice->id}");
+    $response = $this->getJson("/api/v1/invoices/{$invoice->id}");
     $response->assertOk();
 
     // Cannot create
@@ -327,7 +327,7 @@ test('accountant can view but not create invoices', function (): void {
 });
 
 test('unauthenticated request is rejected', function (): void {
-    $response = $this->getJson('/api/invoices');
+    $response = $this->getJson('/api/v1/invoices');
 
     $response->assertUnauthorized();
 });
@@ -349,7 +349,7 @@ test('invoice totals are automatically calculated on creation', function (): voi
         ],
     ];
 
-    $response = $this->postJson('/api/invoices', $invoiceData);
+    $response = $this->postJson('/api/v1/invoices', $invoiceData);
 
     $response->assertCreated();
 
@@ -376,7 +376,7 @@ test('can duplicate invoice', function (): void {
 
     Sanctum::actingAs($this->user);
 
-    $response = $this->postJson("/api/invoices/{$originalInvoice->id}/duplicate");
+    $response = $this->postJson("/api/v1/invoices/{$originalInvoice->id}/duplicate");
 
     $response->assertCreated()
         ->assertJsonPath('data.status', 'draft')
@@ -398,7 +398,7 @@ test('pagination works correctly', function (): void {
         'client_id' => $this->client->id,
     ]);
 
-    $response = $this->getJson('/api/invoices?per_page=10');
+    $response = $this->getJson('/api/v1/invoices?per_page=10');
 
     $response->assertOk()
         ->assertJsonCount(10, 'data')

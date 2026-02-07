@@ -17,6 +17,8 @@ class InvoiceFactory extends Factory
 
     private static array $sequenceByOrganization = [];
 
+    private bool $skipLines = false;
+
     public function definition(): array
     {
         $issueDate = $this->faker->dateTimeBetween('-90 days', 'now');
@@ -92,11 +94,14 @@ class InvoiceFactory extends Factory
                 $invoice->client->save();
             }
 
-            $lineCount = $this->faker->numberBetween(1, 5);
+            // Only create lines if not skipped
+            if (!$this->skipLines) {
+                $lineCount = $this->faker->numberBetween(1, 5);
 
-            InvoiceLineFactory::new()->count($lineCount)->create([
-                'invoice_id' => $invoice->id,
-            ]);
+                InvoiceLineFactory::new()->count($lineCount)->create([
+                    'invoice_id' => $invoice->id,
+                ]);
+            }
 
             $invoice->calculateTotals();
 
@@ -124,6 +129,12 @@ class InvoiceFactory extends Factory
     public function draft(): self
     {
         return $this->state(fn (): array => ['status' => InvoiceStatus::Draft->value]);
+    }
+
+    public function withoutLines(): self
+    {
+        $this->skipLines = true;
+        return $this;
     }
 
     private function weightedStatus(): InvoiceStatus

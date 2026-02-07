@@ -19,7 +19,7 @@ beforeEach(function (): void {
 });
 
 test('calculateSubtotal returns sum of all line amounts', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create();
@@ -44,7 +44,7 @@ test('calculateSubtotal returns sum of all line amounts', function (): void {
 });
 
 test('calculateTaxAmount returns sum of all line taxes', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create();
@@ -71,7 +71,7 @@ test('calculateTaxAmount returns sum of all line taxes', function (): void {
 });
 
 test('calculateDiscount returns zero when no discount is set', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create(['discount_type' => null, 'discount_value' => 0]);
@@ -82,7 +82,7 @@ test('calculateDiscount returns zero when no discount is set', function (): void
 });
 
 test('calculateDiscount applies percentage discount correctly', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -96,7 +96,7 @@ test('calculateDiscount applies percentage discount correctly', function (): voi
 });
 
 test('calculateDiscount applies fixed amount discount correctly', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -110,7 +110,7 @@ test('calculateDiscount applies fixed amount discount correctly', function (): v
 });
 
 test('calculateDiscount caps discount at subtotal amount', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -124,7 +124,7 @@ test('calculateDiscount caps discount at subtotal amount', function (): void {
 });
 
 test('calculateTotal returns correct total with no tax or discount', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create(['discount_type' => null, 'discount_value' => 0]);
@@ -142,7 +142,7 @@ test('calculateTotal returns correct total with no tax or discount', function ()
 });
 
 test('calculateTotal includes tax amount', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create(['discount_type' => null, 'discount_value' => 0]);
@@ -160,7 +160,7 @@ test('calculateTotal includes tax amount', function (): void {
 });
 
 test('calculateTotal subtracts discount from total', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -181,7 +181,7 @@ test('calculateTotal subtracts discount from total', function (): void {
 });
 
 test('calculateTotal with complex scenario - multiple lines, tax, and discount', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -216,7 +216,7 @@ test('calculateTotal with complex scenario - multiple lines, tax, and discount',
 });
 
 test('recalculate updates all invoice totals correctly', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -247,7 +247,7 @@ test('recalculate updates all invoice totals correctly', function (): void {
 });
 
 test('recalculate updates amount outstanding when payment has been made', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
@@ -277,7 +277,7 @@ test('recalculate updates amount outstanding when payment has been made', functi
 });
 
 test('recalculate ensures total never goes negative', function (): void {
-    $invoice = Invoice::factory()
+    $invoice = Invoice::factory()->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create([
