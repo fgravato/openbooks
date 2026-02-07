@@ -31,6 +31,12 @@ parameters:
 			path: app/Domains/Clients/Models/Client.php
 
 		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
 			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
 			identifier: missingType.generics
 			count: 1
@@ -74,6 +80,12 @@ parameters:
 
 		-
 			message: '#^Method App\\Domains\\Clients\\Models\\Contact\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Contact.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Contact\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
 			identifier: missingType.generics
 			count: 1
 			path: app/Domains/Clients/Models/Contact.php
@@ -703,6 +715,12 @@ parameters:
 			path: app/Domains/Identity/Models/Organization.php
 
 		-
+			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
 			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
 			identifier: missingType.generics
 			count: 1
@@ -752,6 +770,12 @@ parameters:
 
 		-
 			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:expenses\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
 			identifier: missingType.generics
 			count: 1
 			path: app/Domains/Identity/Models/User.php
@@ -3065,3 +3089,279 @@ parameters:
 			identifier: method.notFound
 			count: 3
 			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 27
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 22
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 17
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:assertDatabaseHas\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:assertSoftDeleted\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:deleteJson\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:getJson\(\)\.$#'
+			identifier: method.notFound
+			count: 11
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:postJson\(\)\.$#'
+			identifier: method.notFound
+			count: 5
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:putJson\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$amount_outstanding on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$invoice_number on App\\Domains\\Invoicing\\Models\\Invoice\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Domains\\Invoicing\\Models\\Invoice\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$lines on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$status on App\\Domains\\Invoicing\\Models\\Invoice\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Domains\\Invoicing\\Models\\Invoice\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$subtotal on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$tax_amount on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot access property \$total on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Cannot call method lines\(\) on App\\Domains\\Invoicing\\Models\\Invoice\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Domains\\Invoicing\\Models\\Invoice\>\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Api/InvoiceApiTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 13
+			path: tests/Unit/Domains/Clients/ClientModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 2
+			path: tests/Unit/Domains/Clients/ClientModelTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:assertDatabaseHas\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Domains/Clients/ClientModelTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:assertSoftDeleted\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Domains/Clients/ClientModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 7
+			path: tests/Unit/Domains/Expenses/ExpenseModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 31
+			path: tests/Unit/Domains/Expenses/ExpenseModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 3
+			path: tests/Unit/Domains/Expenses/ExpenseModelTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:assertSoftDeleted\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Domains/Expenses/ExpenseModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 14
+			path: tests/Unit/Domains/Invoicing/InvoiceCalculationServiceTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 14
+			path: tests/Unit/Domains/Invoicing/InvoiceCalculationServiceTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$service\.$#'
+			identifier: property.notFound
+			count: 14
+			path: tests/Unit/Domains/Invoicing/InvoiceCalculationServiceTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Unit/Domains/Invoicing/InvoiceLineTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$invoice\.$#'
+			identifier: property.notFound
+			count: 6
+			path: tests/Unit/Domains/Invoicing/InvoiceLineTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Unit/Domains/Invoicing/InvoiceLineTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 23
+			path: tests/Unit/Domains/Invoicing/InvoiceModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 27
+			path: tests/Unit/Domains/Invoicing/InvoiceModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$org1\.$#'
+			identifier: property.notFound
+			count: 59
+			path: tests/Unit/Domains/Invoicing/InvoicePolicyTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$org2\.$#'
+			identifier: property.notFound
+			count: 6
+			path: tests/Unit/Domains/Invoicing/InvoicePolicyTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$policy\.$#'
+			identifier: property.notFound
+			count: 35
+			path: tests/Unit/Domains/Invoicing/InvoicePolicyTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 4
+			path: tests/Unit/Domains/Payments/PaymentModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$invoice\.$#'
+			identifier: property.notFound
+			count: 23
+			path: tests/Unit/Domains/Payments/PaymentModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$organization\.$#'
+			identifier: property.notFound
+			count: 24
+			path: tests/Unit/Domains/Payments/PaymentModelTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$org1\.$#'
+			identifier: property.notFound
+			count: 24
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
+
+		-
+			message: '#^Access to an undefined property PHPUnit\\Framework\\TestCase\:\:\$org2\.$#'
+			identifier: property.notFound
+			count: 16
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
+
+		-
+			message: '#^Cannot access property \$client on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
+
+		-
+			message: '#^Cannot access property \$id on App\\Domains\\Clients\\Models\\Client\|null\.$#'
+			identifier: property.nonObject
+			count: 4
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
+
+		-
+			message: '#^Cannot access property \$id on App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
+
+		-
+			message: '#^Cannot access property \$id on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
+
+		-
+			message: '#^Unable to resolve the template type TAndValue in call to method Pest\\Expectation\<int\>\:\:and\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: tests/Unit/Scopes/OrganizationScopeTest.php
