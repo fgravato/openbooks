@@ -26,7 +26,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->index(['organization_id', 'client_id']);
-            $table->unique(['organization_id', 'gateway_payment_method_id']);
+            $table->unique(['organization_id', 'gateway_payment_method_id'], 'pmc_org_gateway_pm_unique');
         });
     }
 
