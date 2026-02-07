@@ -28,7 +28,7 @@ return new class extends Migration
             $table->index(['organization_id', 'date']);
             $table->index(['organization_id', 'pending']);
             $table->index(['organization_id', 'expense_id']);
-            $table->unique(['organization_id', 'bank_connection_id', 'transaction_id']);
+            $table->unique(['organization_id', 'bank_connection_id', 'transaction_id'], 'bank_txn_org_conn_txn_unique');
         });
 
         Schema::table('expenses', function (Blueprint $table): void {
