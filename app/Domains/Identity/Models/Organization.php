@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Domains\Identity\Models;
 
 use App\Domains\Identity\Enums\SubscriptionTier;
+use Database\Factories\Identity\OrganizationFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,9 +15,9 @@ class Organization extends Model
 {
     use HasFactory;
 
-    protected string $table = 'organizations';
+    protected $table = 'organizations';
 
-    protected array $fillable = [
+    protected $fillable = [
         'name',
         'slug',
         'owner_id',
@@ -32,6 +34,11 @@ class Organization extends Model
             'settings' => 'array',
             'subscription_tier' => SubscriptionTier::class,
         ];
+    }
+
+    protected static function newFactory(): Factory
+    {
+        return OrganizationFactory::new();
     }
 
     public function users(): HasMany

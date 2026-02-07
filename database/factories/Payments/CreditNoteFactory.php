@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CreditNoteFactory extends Factory
 {
-    protected string $model = CreditNote::class;
+    protected $model = CreditNote::class;
 
     public function definition(): array
     {

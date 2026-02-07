@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Log;
 
 class SendPaymentReminders extends Command
 {
-    protected string $signature = 'invoices:send-reminders';
+    protected $signature = 'invoices:send-reminders';
 
-    protected string $description = 'Send payment reminder emails';
+    protected $description = 'Send payment reminder emails';
 
     public function handle(): int
     {

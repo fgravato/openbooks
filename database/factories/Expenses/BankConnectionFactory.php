@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BankConnectionFactory extends Factory
 {
-    protected string $model = BankConnection::class;
+    protected $model = BankConnection::class;
 
     public function definition(): array
     {

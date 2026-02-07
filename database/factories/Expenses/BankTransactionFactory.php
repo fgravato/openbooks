@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BankTransactionFactory extends Factory
 {
-    protected string $model = BankTransaction::class;
+    protected $model = BankTransaction::class;
 
     public function definition(): array
     {

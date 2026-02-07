@@ -25,9 +25,9 @@ class Expense extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected string $table = 'expenses';
+    protected $table = 'expenses';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'user_id',
         'client_id',

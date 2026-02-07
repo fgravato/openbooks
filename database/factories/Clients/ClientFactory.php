@@ -10,7 +10,7 @@ use App\Domains\Identity\Models\Organization;
 
 class ClientFactory extends Factory
 {
-    protected string $model = Client::class;
+    protected $model = Client::class;
 
     public function definition(): array
     {

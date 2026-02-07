@@ -5,26 +5,28 @@ declare(strict_types=1);
 namespace App\Domains\Identity\Models;
 
 use App\Domains\Identity\Enums\Role;
+use App\Traits\BelongsToOrganization;
+use Database\Factories\Identity\UserFactory;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Sanctum\HasApiTokens as HasSanctumApiTokens;
-use App\Traits\BelongsToOrganization;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use BelongsToOrganization;
-    use HasApiTokens;
+    // use HasApiTokens; // Passport - conflicts with Sanctum
     use HasFactory;
     use HasSanctumApiTokens;
     use Notifiable;
 
-    protected string $table = 'users';
+    protected $table = 'users';
 
-    protected array $fillable = [
+    protected $fillable = [
         'name',
         'email',
         'password',
@@ -35,7 +37,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'last_login_at',
     ];
 
-    protected array $hidden = [
+    protected $hidden = [
         'password',
         'remember_token',
         'mfa_secret',
@@ -76,5 +78,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isAdmin(): bool
     {
         return in_array($this->role, [Role::Owner, Role::Admin], true);
+    }
+
+    protected static function newFactory(): Factory
+    {
+        return UserFactory::new();
     }
 }

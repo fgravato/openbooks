@@ -26,9 +26,9 @@ class InvoiceProfile extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'invoice_profiles';
+    protected $table = 'invoice_profiles';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'client_id',
         'name',

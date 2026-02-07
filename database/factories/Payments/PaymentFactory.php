@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PaymentFactory extends Factory
 {
-    protected string $model = Payment::class;
+    protected $model = Payment::class;
 
     public function definition(): array
     {

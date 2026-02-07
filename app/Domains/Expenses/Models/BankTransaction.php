@@ -18,9 +18,9 @@ class BankTransaction extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'bank_transactions';
+    protected $table = 'bank_transactions';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'bank_connection_id',
         'transaction_id',

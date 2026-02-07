@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InvoiceLineFactory extends Factory
 {
-    protected string $model = InvoiceLine::class;
+    protected $model = InvoiceLine::class;
 
     public function definition(): array
     {

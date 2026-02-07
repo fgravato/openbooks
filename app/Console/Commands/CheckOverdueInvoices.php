@@ -10,9 +10,9 @@ use Illuminate\Console\Command;
 
 class CheckOverdueInvoices extends Command
 {
-    protected string $signature = 'invoices:check-overdue';
+    protected $signature = 'invoices:check-overdue';
 
-    protected string $description = 'Update status to Overdue for past-due invoices';
+    protected $description = 'Update status to Overdue for past-due invoices';
 
     public function handle(): int
     {

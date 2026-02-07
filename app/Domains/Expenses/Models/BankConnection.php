@@ -20,9 +20,9 @@ class BankConnection extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'bank_connections';
+    protected $table = 'bank_connections';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'name',
         'institution_name',

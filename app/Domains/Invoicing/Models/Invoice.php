@@ -30,9 +30,9 @@ class Invoice extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected string $table = 'invoices';
+    protected $table = 'invoices';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'client_id',
         'invoice_profile_id',

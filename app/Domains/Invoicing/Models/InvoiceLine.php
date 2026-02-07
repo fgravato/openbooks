@@ -15,9 +15,9 @@ class InvoiceLine extends Model
 {
     use HasFactory;
 
-    protected string $table = 'invoice_lines';
+    protected $table = 'invoice_lines';
 
-    protected array $fillable = [
+    protected $fillable = [
         'invoice_id',
         'type',
         'description',

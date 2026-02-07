@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ExpenseFactory extends Factory
 {
-    protected string $model = Expense::class;
+    protected $model = Expense::class;
 
     public function definition(): array
     {

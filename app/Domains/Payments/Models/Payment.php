@@ -28,9 +28,9 @@ class Payment extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected string $table = 'payments';
+    protected $table = 'payments';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'client_id',
         'invoice_id',

@@ -18,9 +18,9 @@ class PaymentRefund extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'payment_refunds';
+    protected $table = 'payment_refunds';
 
-    protected array $fillable = [
+    protected $fillable = [
         'payment_id',
         'organization_id',
         'amount',

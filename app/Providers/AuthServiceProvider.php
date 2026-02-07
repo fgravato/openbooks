@@ -18,7 +18,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 
 class AuthServiceProvider extends ServiceProvider
 {
-    protected array $policies = [
+    protected $policies = [
         Invoice::class => InvoicePolicy::class,
         InvoiceProfile::class => InvoiceProfilePolicy::class,
         Payment::class => PaymentPolicy::class,

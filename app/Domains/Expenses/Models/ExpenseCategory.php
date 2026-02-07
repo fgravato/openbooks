@@ -18,9 +18,9 @@ class ExpenseCategory extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'expense_categories';
+    protected $table = 'expense_categories';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'name',
         'description',

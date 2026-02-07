@@ -9,9 +9,9 @@ use Illuminate\Console\Command;
 
 class ProcessRecurringExpenses extends Command
 {
-    protected string $signature = 'expenses:process-recurring';
+    protected $signature = 'expenses:process-recurring';
 
-    protected string $description = 'Generate expenses from due recurring profiles';
+    protected $description = 'Generate expenses from due recurring profiles';
 
     public function handle(RecurringExpenseService $recurringExpenseService): int
     {

@@ -10,7 +10,7 @@ use App\Domains\Clients\Models\Contact;
 
 class ContactFactory extends Factory
 {
-    protected string $model = Contact::class;
+    protected $model = Contact::class;
 
     public function definition(): array
     {

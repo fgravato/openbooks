@@ -15,9 +15,9 @@ class InvoiceTemplate extends Model
     use BelongsToOrganization;
     use HasFactory;
 
-    protected string $table = 'invoice_templates';
+    protected $table = 'invoice_templates';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'name',
         'is_default',

@@ -19,9 +19,9 @@ class PaymentMethodConfig extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected string $table = 'payment_method_configs';
+    protected $table = 'payment_method_configs';
 
-    protected array $fillable = [
+    protected $fillable = [
         'organization_id',
         'client_id',
         'gateway',
