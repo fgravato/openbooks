@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('tax_name')->nullable();
             $table->decimal('tax_percent', 5, 2)->nullable();
             $table->unsignedBigInteger('amount')->default(0);
-            $table->foreignId('expense_id')->nullable()->constrained('expenses')->nullOnDelete();
+            $table->unsignedBigInteger('expense_id')->nullable();
             $table->foreignId('time_entry_id')->nullable()->constrained('time_entries')->nullOnDelete();
             $table->unsignedInteger('sort_order')->default(0);
             $table->timestamps();
