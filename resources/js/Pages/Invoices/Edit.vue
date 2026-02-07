@@ -27,8 +27,14 @@ const form = useForm({
   terms: props.invoice.terms || '',
 });
 
+interface LineItem {
+  description: string;
+  quantity: number;
+  unit_price: number;
+}
+
 const subtotal = computed(() => {
-  return form.line_items.reduce((acc, item) => acc + (item.quantity * item.unit_price), 0);
+  return form.line_items.reduce((acc: number, item: LineItem) => acc + (item.quantity * item.unit_price), 0);
 });
 
 const addLine = () => {

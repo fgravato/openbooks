@@ -19,14 +19,17 @@ beforeEach(function (): void {
 
 test('applyPayment updates amount paid and outstanding', function (): void {
     $invoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
-        ->create([
-            'total' => 10000,
-            'amount_paid' => 0,
-            'amount_outstanding' => 10000,
-            'status' => InvoiceStatus::Sent,
-        ]);
+        ->create(['status' => InvoiceStatus::Sent]);
+
+    // Set specific test values after factory processing
+    $invoice->update([
+        'total' => 10000,
+        'amount_paid' => 0,
+        'amount_outstanding' => 10000,
+    ]);
 
     $payment = Payment::factory()->create([
         'organization_id' => $this->organization->id,
@@ -43,14 +46,16 @@ test('applyPayment updates amount paid and outstanding', function (): void {
 
 test('applyPayment marks invoice as paid when fully paid', function (): void {
     $invoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
-        ->create([
-            'total' => 10000,
-            'amount_paid' => 0,
-            'amount_outstanding' => 10000,
-            'status' => InvoiceStatus::Sent,
-        ]);
+        ->create(['status' => InvoiceStatus::Sent]);
+
+    $invoice->update([
+        'total' => 10000,
+        'amount_paid' => 0,
+        'amount_outstanding' => 10000,
+    ]);
 
     $payment = Payment::factory()->create([
         'organization_id' => $this->organization->id,
@@ -68,14 +73,16 @@ test('applyPayment marks invoice as paid when fully paid', function (): void {
 
 test('applyPayment sets status to partial when partially paid', function (): void {
     $invoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
-        ->create([
-            'total' => 10000,
-            'amount_paid' => 5000,
-            'amount_outstanding' => 5000,
-            'status' => InvoiceStatus::Sent,
-        ]);
+        ->create(['status' => InvoiceStatus::Sent]);
+
+    $invoice->update([
+        'total' => 10000,
+        'amount_paid' => 5000,
+        'amount_outstanding' => 5000,
+    ]);
 
     $payment = Payment::factory()->create([
         'organization_id' => $this->organization->id,
@@ -127,15 +134,16 @@ test('markAsSent transitions from draft to sent', function (): void {
 
 test('markAsSent does not transition from invalid status', function (): void {
     $invoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create(['status' => InvoiceStatus::Paid]);
 
-    $originalSentAt = $invoice->sent_at;
+    $originalSentAt = $invoice->sent_at?->toISOString();
     $invoice->markAsSent();
 
     expect($invoice->status)->toBe(InvoiceStatus::Paid)
-        ->and($invoice->sent_at)->toBe($originalSentAt);
+        ->and($invoice->sent_at?->toISOString())->toBe($originalSentAt);
 });
 
 test('markAsViewed transitions from sent to viewed', function (): void {
@@ -152,9 +160,10 @@ test('markAsViewed transitions from sent to viewed', function (): void {
 
 test('markAsViewed does not transition from non-sent status', function (): void {
     $invoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
-        ->create(['status' => InvoiceStatus::Draft]);
+        ->create(['status' => InvoiceStatus::Draft, 'viewed_at' => null]);
 
     $invoice->markAsViewed();
 
@@ -181,14 +190,16 @@ test('markAsPaid sets status to paid when outstanding is zero', function (): voi
 
 test('markAsPaid does not mark as paid when amount outstanding', function (): void {
     $invoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
-        ->create([
-            'status' => InvoiceStatus::Sent,
-            'total' => 10000,
-            'amount_paid' => 5000,
-            'amount_outstanding' => 5000,
-        ]);
+        ->create(['status' => InvoiceStatus::Sent]);
+
+    $invoice->update([
+        'total' => 10000,
+        'amount_paid' => 5000,
+        'amount_outstanding' => 5000,
+    ]);
 
     $invoice->markAsPaid();
 
@@ -271,6 +282,7 @@ test('duplicate creates new invoice with draft status', function (): void {
 
 test('duplicate copies all invoice lines', function (): void {
     $originalInvoice = Invoice::factory()
+        ->withoutLines()
         ->for($this->organization)
         ->for($this->client)
         ->create();
@@ -280,6 +292,7 @@ test('duplicate copies all invoice lines', function (): void {
         'description' => 'Line 1',
         'quantity' => 2,
         'unit_price' => 5000,
+        'sort_order' => 1,
     ]);
 
     InvoiceLine::factory()->create([
@@ -287,6 +300,7 @@ test('duplicate copies all invoice lines', function (): void {
         'description' => 'Line 2',
         'quantity' => 1,
         'unit_price' => 10000,
+        'sort_order' => 2,
     ]);
 
     $duplicate = $originalInvoice->duplicate();

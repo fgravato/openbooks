@@ -136,12 +136,14 @@ test('can create invoice', function (): void {
         'notes' => 'Test invoice',
         'lines' => [
             [
+                'type' => 'item',
                 'description' => 'Service 1',
                 'quantity' => 1,
                 'unit_price' => 10000,
                 'tax_percent' => 10,
             ],
             [
+                'type' => 'item',
                 'description' => 'Service 2',
                 'quantity' => 2,
                 'unit_price' => 5000,
@@ -169,7 +171,7 @@ test('can create invoice', function (): void {
 test('cannot create invoice without required fields', function (): void {
     Sanctum::actingAs($this->user);
 
-    $response = $this->postJson('/api/invoices', []);
+    $response = $this->postJson('/api/v1/invoices', []);
 
     $response->assertStatus(422)
         ->assertJsonValidationErrors(['client_id', 'issue_date', 'due_date']);
@@ -318,10 +320,12 @@ test('accountant can view but not create invoices', function (): void {
     $response->assertOk();
 
     // Cannot create
-    $response = $this->postJson('/api/invoices', [
+    $response = $this->postJson('/api/v1/invoices', [
         'client_id' => $this->client->id,
         'issue_date' => now()->toDateString(),
         'due_date' => now()->addDays(30)->toDateString(),
+        'currency_code' => 'USD',
+        'lines' => [['type' => 'item', 'description' => 'Test', 'quantity' => 1, 'unit_price' => 1000]],
     ]);
     $response->assertForbidden();
 });
@@ -339,8 +343,10 @@ test('invoice totals are automatically calculated on creation', function (): voi
         'client_id' => $this->client->id,
         'issue_date' => now()->toDateString(),
         'due_date' => now()->addDays(30)->toDateString(),
+        'currency_code' => 'USD',
         'lines' => [
             [
+                'type' => 'item',
                 'description' => 'Service',
                 'quantity' => 2,
                 'unit_price' => 10000, // $100 each
@@ -365,7 +371,7 @@ test('invoice totals are automatically calculated on creation', function (): voi
 });
 
 test('can duplicate invoice', function (): void {
-    $originalInvoice = Invoice::factory()->create([
+    $originalInvoice = Invoice::factory()->withoutLines()->create([
         'organization_id' => $this->organization->id,
         'client_id' => $this->client->id,
         'status' => InvoiceStatus::Paid,

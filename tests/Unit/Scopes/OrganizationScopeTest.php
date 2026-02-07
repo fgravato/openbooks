@@ -93,9 +93,11 @@ test('organization scope automatically sets organization_id on model creation', 
     $user = User::factory()->create(['organization_id' => $this->org1->id]);
     Auth::login($user);
 
+    // Pass null to override factory's default and let the trait set it
     $client = Client::factory()->create([
-        'name' => 'Test Client',
-        // organization_id not explicitly set
+        'organization_id' => null,
+        'first_name' => 'Test',
+        'company_name' => 'Test Client',
     ]);
 
     expect($client->organization_id)->toBe($this->org1->id);
@@ -107,7 +109,8 @@ test('organization scope does not override explicitly set organization_id', func
 
     // Even though user is from org1, we explicitly set org2
     $client = Client::factory()->create([
-        'name' => 'Test Client',
+        'first_name' => 'Test',
+        'company_name' => 'Test Client',
         'organization_id' => $this->org2->id, // explicitly set
     ]);
 
@@ -193,21 +196,21 @@ test('organization scope works with complex where clauses', function (): void {
 
     $client1 = Client::factory()->create([
         'organization_id' => $this->org1->id,
-        'name' => 'Alpha Corp',
+        'company_name' => 'Alpha Corp',
     ]);
 
     $client2 = Client::factory()->create([
         'organization_id' => $this->org1->id,
-        'name' => 'Beta Inc',
+        'company_name' => 'Beta Inc',
     ]);
 
     $client3 = Client::factory()->create([
         'organization_id' => $this->org2->id,
-        'name' => 'Alpha Corp', // same name but different org
+        'company_name' => 'Alpha Corp', // same name but different org
     ]);
 
     // Search should be scoped to current org
-    $results = Client::where('name', 'Alpha Corp')->get();
+    $results = Client::where('company_name', 'Alpha Corp')->get();
 
     expect($results)->toHaveCount(1)
         ->and($results->first()->id)->toBe($client1->id);

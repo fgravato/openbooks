@@ -16,7 +16,7 @@ enum DiscountType: string
         }
 
         return match ($this) {
-            self::Percentage => min($subtotal, ($subtotal * $value) / 100),
+            self::Percentage => min($subtotal, ($subtotal * $value) / 10000), // value in basis points (1000 = 10%)
             self::FixedAmount => min($subtotal, $value),
         };
     }

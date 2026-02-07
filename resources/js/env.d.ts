@@ -13,6 +13,18 @@ declare global {
   function route(name: string, params?: Record<string, unknown>, absolute?: boolean): string;
 }
 
+interface RouteFunction {
+  (name: string, params?: Record<string, unknown>, absolute?: boolean): string;
+  (): { current: (name?: string) => boolean };
+}
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    route: RouteFunction;
+    $window: Window & typeof globalThis;
+  }
+}
+
 declare module '@inertiajs/vue3' {
   export function usePage<T = AppPageProps>(): { props: T };
 }

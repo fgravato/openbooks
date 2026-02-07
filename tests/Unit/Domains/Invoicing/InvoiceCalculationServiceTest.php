@@ -251,6 +251,7 @@ test('recalculate updates amount outstanding when payment has been made', functi
         ->for($this->organization)
         ->for($this->client)
         ->create([
+            'status' => \App\Domains\Invoicing\Enums\InvoiceStatus::Sent->value,
             'discount_type' => null,
             'discount_value' => 0,
             'subtotal' => 0,

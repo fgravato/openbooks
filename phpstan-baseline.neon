@@ -817,12 +817,6 @@ parameters:
 			path: app/Domains/Identity/Models/User.php
 
 		-
-			message: '#^Trait Laravel\\Passport\\HasApiTokens requires using class to implement Laravel\\Passport\\Contracts\\OAuthenticatable, but App\\Domains\\Identity\\Models\\User does not\.$#'
-			identifier: class.missingImplements
-			count: 1
-			path: app/Domains/Identity/Models/User.php
-
-		-
 			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\)$#'
 			identifier: argument.templateType
 			count: 1
@@ -2955,7 +2949,7 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Factories\\Factory\<Illuminate\\Database\\Eloquent\\Model\>\:\:afterCreating\(\) expects Closure\(Illuminate\\Database\\Eloquent\\Model\)\: mixed, Closure\(App\\Domains\\Invoicing\\Models\\Invoice\)\: void given\.$#'
 			identifier: argument.type
-			count: 1
+			count: 2
 			path: database/factories/Invoicing/InvoiceFactory.php
 
 		-

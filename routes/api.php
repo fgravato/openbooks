@@ -30,7 +30,7 @@ Route::prefix('v1')->middleware(['api', 'resolve-tenant'])->group(function (): v
     Route::post('/payments/webhooks/stripe', [StripeWebhookController::class, 'handle'])
         ->name('api.v1.payments.webhooks.stripe');
 
-    Route::middleware(['auth:sanctum,api', 'has-organization'])->group(function (): void {
+    Route::middleware(['auth:sanctum', 'has-organization'])->group(function (): void {
         // Identity
         Route::get('/user', static function (Request $request): UserResource {
             return UserResource::make($request->user()?->loadMissing('organization'));

@@ -44,6 +44,11 @@ class InvoiceController extends Controller
      */
     public function index(Request $request): AnonymousResourceCollection
     {
+        $user = $request->user();
+        if (! $user || (! $user->hasPermission('invoices.view') && ! $user->hasPermission('invoices.manage'))) {
+            return InvoiceResource::collection(collect());
+        }
+
         $query = Invoice::query()->with(['client']);
 
         if ($request->has('status')) {
@@ -79,6 +84,8 @@ class InvoiceController extends Controller
      */
     public function store(StoreInvoiceRequest $request): InvoiceResource
     {
+        $this->authorize('create', Invoice::class);
+
         return DB::transaction(function () use ($request) {
             $invoice = new Invoice($request->validated());
             $invoice->organization_id = $request->user()->organization_id;
@@ -147,9 +154,7 @@ class InvoiceController extends Controller
      */
     public function destroy(Invoice $invoice): JsonResponse
     {
-        if (! $invoice->canBeEdited()) {
-            return response()->json(['message' => 'Only draft invoices can be deleted.'], 422);
-        }
+        $this->authorize('delete', $invoice);
 
         $invoice->delete();
 

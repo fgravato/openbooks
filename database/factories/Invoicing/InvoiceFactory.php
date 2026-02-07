@@ -17,8 +17,6 @@ class InvoiceFactory extends Factory
 
     private static array $sequenceByOrganization = [];
 
-    private bool $skipLines = false;
-
     public function definition(): array
     {
         $issueDate = $this->faker->dateTimeBetween('-90 days', 'now');
@@ -29,7 +27,7 @@ class InvoiceFactory extends Factory
             'organization_id' => Organization::factory(),
             'client_id' => Client::factory(),
             'invoice_profile_id' => null,
-            'invoice_number' => 'INV-TMP-00000',
+            'invoice_number' => 'INV-TMP-'.$this->faker->unique()->numerify('#####'),
             'status' => $status->value,
             'issue_date' => $issueDate,
             'due_date' => $dueDate,
@@ -86,21 +84,15 @@ class InvoiceFactory extends Factory
                 self::$sequenceByOrganization[$key] = $latestSequence;
             }
 
-            self::$sequenceByOrganization[$key]++;
-            $invoice->invoice_number = sprintf('INV-%s-%05d', $year, self::$sequenceByOrganization[$key]);
+            // Only generate invoice number if it's a temporary one
+            if (str_starts_with($invoice->invoice_number, 'INV-TMP-')) {
+                self::$sequenceByOrganization[$key]++;
+                $invoice->invoice_number = sprintf('INV-%s-%05d', $year, self::$sequenceByOrganization[$key]);
+            }
 
             if ($invoice->client->organization_id !== $organizationId) {
                 $invoice->client->organization_id = $organizationId;
                 $invoice->client->save();
-            }
-
-            // Only create lines if not skipped
-            if (! $this->skipLines) {
-                $lineCount = $this->faker->numberBetween(1, 5);
-
-                InvoiceLineFactory::new()->count($lineCount)->create([
-                    'invoice_id' => $invoice->id,
-                ]);
             }
 
             $invoice->calculateTotals();
@@ -126,15 +118,24 @@ class InvoiceFactory extends Factory
         });
     }
 
+    public function withLines(?int $count = null): static
+    {
+        return $this->afterCreating(function (Invoice $invoice) use ($count): void {
+            $lineCount = $count ?? $this->faker->numberBetween(1, 5);
+            InvoiceLineFactory::new()->count($lineCount)->create([
+                'invoice_id' => $invoice->id,
+            ]);
+            $invoice->calculateTotals();
+        });
+    }
+
     public function draft(): self
     {
         return $this->state(fn (): array => ['status' => InvoiceStatus::Draft->value]);
     }
 
-    public function withoutLines(): self
+    public function withoutLines(): static
     {
-        $this->skipLines = true;
-
         return $this;
     }
 
