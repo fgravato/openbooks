@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Domains\Clients\Models\Client;
 use App\Domains\Identity\Enums\Role;
 use App\Domains\Identity\Models\Organization;
 use App\Domains\Identity\Models\User;
@@ -16,7 +15,7 @@ uses(RefreshDatabase::class);
 beforeEach(function (): void {
     $this->org1 = Organization::factory()->create(['name' => 'Org 1']);
     $this->org2 = Organization::factory()->create(['name' => 'Org 2']);
-    $this->policy = new InvoicePolicy();
+    $this->policy = new InvoicePolicy;
 });
 
 describe('view policy', function (): void {

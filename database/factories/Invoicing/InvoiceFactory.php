@@ -95,7 +95,7 @@ class InvoiceFactory extends Factory
             }
 
             // Only create lines if not skipped
-            if (!$this->skipLines) {
+            if (! $this->skipLines) {
                 $lineCount = $this->faker->numberBetween(1, 5);
 
                 InvoiceLineFactory::new()->count($lineCount)->create([
@@ -134,6 +134,7 @@ class InvoiceFactory extends Factory
     public function withoutLines(): self
     {
         $this->skipLines = true;
+
         return $this;
     }
 

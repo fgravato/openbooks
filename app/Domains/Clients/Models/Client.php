@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domains\Clients\Models;
 
+use App\Traits\BelongsToOrganization;
 use Database\Factories\Clients\ClientFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
-use App\Traits\BelongsToOrganization;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -63,6 +62,7 @@ class Client extends Model
     {
         return $this->hasMany('App\\Domains\\Projects\\Models\\Project');
     }
+
     protected static function newFactory(): Factory
     {
         return ClientFactory::new();

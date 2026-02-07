@@ -15,7 +15,7 @@ uses(RefreshDatabase::class);
 beforeEach(function (): void {
     $this->organization = Organization::factory()->create();
     $this->client = Client::factory()->create(['organization_id' => $this->organization->id]);
-    $this->service = new InvoiceCalculationService();
+    $this->service = new InvoiceCalculationService;
 });
 
 test('calculateSubtotal returns sum of all line amounts', function (): void {
