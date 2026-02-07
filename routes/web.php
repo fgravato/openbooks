@@ -62,6 +62,10 @@ Route::middleware(['web', 'resolve-tenant'])->group(function (): void {
             return $inertia->render('Auth/PasswordConfirm');
         })->name('password.confirm');
 
+        Route::get('/settings/profile', function (ResponseFactory $inertia) {
+            return $inertia->render('Settings/Profile');
+        })->name('settings.profile');
+
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     });
 });
