@@ -9,7 +9,7 @@ import { useCurrency } from '@/Composables/useCurrency';
 import { useDateFormat } from '@/Composables/useDateFormat';
 import { Link, router } from '@inertiajs/vue3';
 import { ref, watch } from 'vue';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 
 const { formatCurrency } = useCurrency();
 const { formatDate } = useDateFormat();

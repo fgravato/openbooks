@@ -8,7 +8,7 @@ import StatusBadge from '@/Components/UI/StatusBadge.vue';
 import { useCurrency } from '@/Composables/useCurrency';
 import { Link, router } from '@inertiajs/vue3';
 import { ref, watch } from 'vue';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 
 const { formatCurrency } = useCurrency();
 

@@ -26,14 +26,14 @@ defineProps<Props>();
     <div class="flex-1 flex justify-between sm:hidden">
       <Link
         v-if="links[0].url"
-        :href="links[0].url"
+        :href="links[0].url!"
         class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50"
       >
         Previous
       </Link>
       <Link
         v-if="links[links.length - 1].url"
-        :href="links[links.length - 1].url"
+        :href="links[links.length - 1].url!"
         class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50"
       >
         Next

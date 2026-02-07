@@ -1,5 +1,5 @@
 import { ref, watch, Ref } from 'vue';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 
 export function useDebounce<T>(value: Ref<T>, delay: number = 300) {
   const debouncedValue = ref(value.value) as Ref<T>;

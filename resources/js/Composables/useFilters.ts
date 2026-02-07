@@ -1,6 +1,6 @@
 import { router } from '@inertiajs/vue3';
 import { reactive, watch } from 'vue';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 
 export function useFilters(initialFilters: Record<string, any>, routeName: string) {
   const filters = reactive({ ...initialFilters });
