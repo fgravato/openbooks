@@ -8,7 +8,7 @@ use App\Domains\Identity\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\Identity\UserResource;
-use Illuminate\Auth\SessionGuard;
+use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -22,7 +22,7 @@ class LoginController extends Controller
 {
     public function __construct(
         private readonly ResponseFactory $inertia,
-        private readonly SessionGuard $guard,
+        private readonly StatefulGuard $guard,
         private readonly Hasher $hasher,
         private readonly TwoFactorAuthenticationProvider $twoFactorAuthenticationProvider,
     ) {}
