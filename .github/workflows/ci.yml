@@ -115,8 +115,7 @@ jobs:
           cp .env.example .env.testing
           sed -i 's/DB_HOST=127.0.0.1/DB_HOST=127.0.0.1/' .env.testing
           sed -i 's/DB_DATABASE=openbooks/DB_DATABASE=openbooks_test/' .env.testing
-          sed -i 's/DB_USERNAME=root/DB_USERNAME=openbooks/' .env.testing
-          sed -i 's/DB_PASSWORD=/DB_PASSWORD=secret/' .env.testing
+          sed -i 's/DB_PASSWORD=/DB_PASSWORD=root/' .env.testing
           sed -i 's/REDIS_HOST=127.0.0.1/REDIS_HOST=127.0.0.1/' .env.testing
           sed -i 's/CACHE_DRIVER=file/CACHE_DRIVER=redis/' .env.testing
           sed -i 's/SESSION_DRIVER=file/SESSION_DRIVER=redis/' .env.testing
