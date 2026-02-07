@@ -21,8 +21,7 @@ readonly class ExpenseData
         public ?int $clientId,
         public ?int $projectId,
         public ?string $notes,
-    ) {
-    }
+    ) {}
 
     public static function fromRequest(Request $request): self
     {

@@ -12,9 +12,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class CheckSubscription
 {
-    public function __construct(private readonly FeatureGate $featureGate)
-    {
-    }
+    public function __construct(private readonly FeatureGate $featureGate) {}
 
     public function handle(Request $request, Closure $next, string $feature): Response
     {

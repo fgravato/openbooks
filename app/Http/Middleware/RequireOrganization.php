@@ -7,14 +7,12 @@ namespace App\Http\Middleware;
 use App\Services\TenantManager;
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class RequireOrganization
 {
-    public function __construct(private readonly TenantManager $tenantManager)
-    {
-    }
+    public function __construct(private readonly TenantManager $tenantManager) {}
 
     public function handle(Request $request, Closure $next): Response
     {

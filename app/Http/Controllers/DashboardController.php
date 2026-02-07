@@ -14,8 +14,7 @@ class DashboardController extends Controller
     public function __construct(
         private readonly ResponseFactory $inertia,
         private readonly TenantManager $tenantManager,
-    ) {
-    }
+    ) {}
 
     public function index(Request $request): Response
     {

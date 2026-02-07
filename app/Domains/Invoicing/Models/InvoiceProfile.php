@@ -6,9 +6,9 @@ namespace App\Domains\Invoicing\Models;
 
 use App\Domains\Clients\Models\Client;
 use App\Domains\Identity\Models\Organization;
-use App\Domains\Invoicing\Enums\InvoiceProfileFrequency;
-use App\Domains\Invoicing\Enums\InvoiceLineType;
 use App\Domains\Invoicing\Enums\DiscountType;
+use App\Domains\Invoicing\Enums\InvoiceLineType;
+use App\Domains\Invoicing\Enums\InvoiceProfileFrequency;
 use App\Domains\Invoicing\Enums\InvoiceStatus;
 use App\Domains\Invoicing\Services\InvoiceNumberService;
 use App\Traits\BelongsToOrganization;
@@ -99,7 +99,7 @@ class InvoiceProfile extends Model
     {
         $templateData = (array) $this->template_data;
 
-        $invoice = new Invoice();
+        $invoice = new Invoice;
         $invoice->organization_id = (int) $this->organization_id;
         $invoice->client_id = (int) $this->client_id;
         $invoice->invoice_profile_id = (int) $this->id;
@@ -125,7 +125,7 @@ class InvoiceProfile extends Model
 
         $lines = $templateData['lines'] ?? [];
         foreach ($lines as $index => $lineData) {
-            $line = new InvoiceLine();
+            $line = new InvoiceLine;
             $line->invoice_id = $invoice->id;
             $line->type = InvoiceLineType::from((string) ($lineData['type'] ?? InvoiceLineType::Item->value));
             $line->description = (string) ($lineData['description'] ?? 'Service');

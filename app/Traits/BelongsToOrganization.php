@@ -22,7 +22,7 @@ trait BelongsToOrganization
 
     public static function bootBelongsToOrganization(): void
     {
-        static::addGlobalScope(new OrganizationScope());
+        static::addGlobalScope(new OrganizationScope);
 
         static::creating(static function (Model $model): void {
             if ($model->getAttribute('organization_id') !== null) {

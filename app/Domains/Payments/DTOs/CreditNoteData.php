@@ -11,6 +11,5 @@ readonly class CreditNoteData
         public int $amount,
         public string $reason,
         public ?int $invoiceId,
-    ) {
-    }
+    ) {}
 }

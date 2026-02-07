@@ -19,8 +19,7 @@ readonly class InvoiceData
         public array $lines,
         public ?DiscountType $discountType,
         public ?float $discountValue,
-    ) {
-    }
+    ) {}
 
     public static function fromRequest(Request $request): self
     {

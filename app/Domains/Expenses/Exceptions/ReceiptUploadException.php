@@ -6,6 +6,4 @@ namespace App\Domains\Expenses\Exceptions;
 
 use App\Exceptions\DomainException;
 
-class ReceiptUploadException extends DomainException
-{
-}
+class ReceiptUploadException extends DomainException {}

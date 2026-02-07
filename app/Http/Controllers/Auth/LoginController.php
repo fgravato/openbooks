@@ -25,8 +25,7 @@ class LoginController extends Controller
         private readonly SessionGuard $guard,
         private readonly Hasher $hasher,
         private readonly TwoFactorAuthenticationProvider $twoFactorAuthenticationProvider,
-    ) {
-    }
+    ) {}
 
     public function showLoginForm(Request $request): Response
     {

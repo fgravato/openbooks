@@ -10,7 +10,6 @@ use App\Http\Requests\Expenses\StoreExpenseCategoryRequest;
 use App\Http\Requests\Expenses\UpdateExpenseCategoryRequest;
 use App\Http\Resources\Expenses\ExpenseCategoryResource;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 /**
@@ -46,31 +45,31 @@ class ExpenseCategoryController extends Controller
     /**
      * Show category
      */
-    public function show(ExpenseCategory $category): ExpenseCategoryResource
+    public function show(ExpenseCategory $expenseCategory): ExpenseCategoryResource
     {
-        return new ExpenseCategoryResource($category->loadCount('expenses'));
+        return new ExpenseCategoryResource($expenseCategory->loadCount('expenses'));
     }
 
     /**
      * Update category
      */
-    public function update(UpdateExpenseCategoryRequest $request, ExpenseCategory $category): ExpenseCategoryResource
+    public function update(UpdateExpenseCategoryRequest $request, ExpenseCategory $expenseCategory): ExpenseCategoryResource
     {
-        $category->update($request->validated());
+        $expenseCategory->update($request->validated());
 
-        return new ExpenseCategoryResource($category);
+        return new ExpenseCategoryResource($expenseCategory);
     }
 
     /**
      * Delete category
      */
-    public function destroy(ExpenseCategory $category): JsonResponse
+    public function destroy(ExpenseCategory $expenseCategory): JsonResponse
     {
-        if ($category->expenses()->exists()) {
+        if ($expenseCategory->expenses()->exists()) {
             return response()->json(['message' => 'Cannot delete category with expenses.'], 422);
         }
 
-        $category->delete();
+        $expenseCategory->delete();
 
         return response()->json(null, 204);
     }

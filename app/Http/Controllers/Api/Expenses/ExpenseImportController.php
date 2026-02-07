@@ -25,7 +25,7 @@ class ExpenseImportController extends Controller
     public function previewCsv(Request $request): JsonResponse
     {
         $request->validate([
-            'file' => ['required', 'file', 'mimes:csv,txt'],
+            'file' => ['required', 'file', 'mimes:csv,txt,ofx'],
         ]);
 
         $file = $request->file('file');
@@ -49,12 +49,16 @@ class ExpenseImportController extends Controller
     public function importCsv(ImportExpensesRequest $request): JsonResponse
     {
         $file = $request->file('file');
-        
-        $result = $this->importService->importFromCsv(
-            $file->getRealPath(),
-            (int) $request->category_id,
-            $request->mappings
-        );
+
+        if ($file->getClientOriginalExtension() === 'ofx') {
+            $result = $this->importService->importFromOfx($file->getRealPath());
+        } else {
+            $result = $this->importService->importFromCsv(
+                $file->getRealPath(),
+                (int) $request->integer('category_id', 0),
+                (array) $request->input('mappings', []),
+            );
+        }
 
         return response()->json($result);
     }

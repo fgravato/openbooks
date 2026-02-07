@@ -17,9 +17,7 @@ use Illuminate\Http\Request;
 
 class CreditNoteController extends Controller
 {
-    public function __construct(private readonly CreditNoteService $creditNoteService)
-    {
-    }
+    public function __construct(private readonly CreditNoteService $creditNoteService) {}
 
     public function index(Request $request): JsonResponse
     {

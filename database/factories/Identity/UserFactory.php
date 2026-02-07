@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Database\Factories\Identity;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use App\Domains\Identity\Enums\Role;
 use App\Domains\Identity\Models\Organization;
 use App\Domains\Identity\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {

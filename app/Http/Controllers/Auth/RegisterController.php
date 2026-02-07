@@ -21,8 +21,7 @@ class RegisterController extends Controller
         private readonly ResponseFactory $inertia,
         private readonly CreateNewUser $createNewUser,
         private readonly SessionGuard $guard,
-    ) {
-    }
+    ) {}
 
     public function showRegistrationForm(Request $request): Response
     {

@@ -14,14 +14,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
-use Laravel\Sanctum\HasApiTokens as HasSanctumApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use BelongsToOrganization;
-    // use HasApiTokens; // Passport - conflicts with Sanctum
+    use HasApiTokens;
     use HasFactory;
-    use HasSanctumApiTokens;
     use Notifiable;
 
     protected $table = 'users';

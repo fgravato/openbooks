@@ -27,8 +27,7 @@ class PaymentController extends Controller
         private readonly PaymentProcessingService $paymentProcessingService,
         private readonly PaymentRefundService $paymentRefundService,
         private readonly PaymentReceiptService $paymentReceiptService,
-    ) {
-    }
+    ) {}
 
     public function index(Request $request): JsonResponse
     {

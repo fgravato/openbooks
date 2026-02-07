@@ -8,7 +8,6 @@ use App\Domains\Clients\Models\Client;
 use App\Domains\Identity\Models\Organization;
 use App\Domains\Identity\Models\User;
 use App\Domains\Invoicing\Enums\InvoiceStatus;
-use App\Domains\Invoicing\Models\Invoice;
 use Database\Factories\Invoicing\InvoiceFactory;
 use Illuminate\Database\Seeder;
 

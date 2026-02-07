@@ -65,7 +65,7 @@ class InvoiceController extends Controller
         if ($request->has('search')) {
             $query->where(function ($q) use ($request) {
                 $q->where('invoice_number', 'like', "%{$request->search}%")
-                  ->orWhere('notes', 'like', "%{$request->search}%");
+                    ->orWhere('notes', 'like', "%{$request->search}%");
             });
         }
 
@@ -84,11 +84,11 @@ class InvoiceController extends Controller
             $invoice->organization_id = $request->user()->organization_id;
             $invoice->created_by_user_id = $request->user()->id;
             $invoice->status = InvoiceStatus::Draft;
-            
-            if (!$invoice->invoice_number) {
+
+            if (! $invoice->invoice_number) {
                 $invoice->invoice_number = $this->numberService->generateNextNumber($request->user()->organization);
             }
-            
+
             $invoice->save();
 
             if ($request->has('lines')) {
@@ -147,7 +147,7 @@ class InvoiceController extends Controller
      */
     public function destroy(Invoice $invoice): JsonResponse
     {
-        if (!$invoice->canBeEdited()) {
+        if (! $invoice->canBeEdited()) {
             return response()->json(['message' => 'Only draft invoices can be deleted.'], 422);
         }
 
@@ -162,6 +162,7 @@ class InvoiceController extends Controller
     public function duplicate(Invoice $invoice): InvoiceResource
     {
         $newInvoice = $invoice->duplicate();
+
         return new InvoiceResource($newInvoice->load(['client', 'lines']));
     }
 
@@ -171,6 +172,7 @@ class InvoiceController extends Controller
     public function markAsSent(Invoice $invoice): InvoiceResource
     {
         $this->statusService->transition($invoice, InvoiceStatus::Sent);
+
         return new InvoiceResource($invoice);
     }
 
@@ -181,7 +183,7 @@ class InvoiceController extends Controller
     {
         // Implementation for sending email
         // Mail::to($request->to)->send(new InvoiceMail($invoice, $request->message));
-        
+
         $this->statusService->transition($invoice, InvoiceStatus::Sent);
 
         return response()->json(['message' => 'Invoice email sent successfully.']);
@@ -193,6 +195,7 @@ class InvoiceController extends Controller
     public function downloadPdf(Invoice $invoice): \Symfony\Component\HttpFoundation\Response
     {
         $pdfPath = $invoice->generatePdf();
+
         return Response::download($pdfPath, "Invoice-{$invoice->invoice_number}.pdf");
     }
 

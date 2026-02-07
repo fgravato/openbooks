@@ -23,9 +23,9 @@ class RecurringExpenseFactory extends Factory
             'description' => $this->faker->sentence(),
             'estimated_amount' => $this->faker->numberBetween(1000, 200000),
             'frequency' => $this->faker->randomElement(RecurringExpenseFrequency::cases())->value,
-            'start_date' => now()->subMonths(3)->toDateString(),
-            'end_date' => $this->faker->boolean(20) ? now()->addMonths(12)->toDateString() : null,
-            'next_occurrence_date' => now()->subDays($this->faker->numberBetween(0, 10))->toDateString(),
+            'start_date' => \now()->subMonths(3)->toDateString(),
+            'end_date' => $this->faker->boolean(20) ? \now()->addMonths(12)->toDateString() : null,
+            'next_occurrence_date' => \now()->subDays($this->faker->numberBetween(0, 10))->toDateString(),
             'is_active' => true,
         ];
     }

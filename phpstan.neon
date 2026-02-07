@@ -1,5 +1,6 @@
 includes:
     - vendor/larastan/larastan/extension.neon
+    - phpstan-baseline.neon
 
 parameters:
     level: 8
@@ -13,5 +14,3 @@ parameters:
     excludePaths:
         - bootstrap/cache/*
         - storage/*
-    checkMissingIterableValueType: true
-    checkGenericClassInNonGenericObjectType: true

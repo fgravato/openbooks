@@ -15,8 +15,7 @@ class StripeWebhookController extends Controller
     public function __construct(
         private readonly StripeWebhookService $stripeWebhookService,
         private readonly StripeGateway $stripeGateway,
-    ) {
-    }
+    ) {}
 
     public function handle(Request $request): JsonResponse
     {

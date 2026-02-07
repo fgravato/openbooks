@@ -77,7 +77,7 @@ Route::prefix('v1')->middleware(['api', 'resolve-tenant'])->group(function (): v
         Route::post('expenses/{expense}/submit', [ExpenseController::class, 'submitForApproval']);
         Route::post('expenses/{expense}/approve', [ExpenseController::class, 'approve']);
         Route::post('expenses/{expense}/reject', [ExpenseController::class, 'reject']);
-        Route::post('expenses/{expense}/receipt', [ExpenseController::class, 'uploadReceipt']);
+        Route::post('expenses/{expense}/receipt', [ExpenseController::class, 'attachReceipt']);
         Route::delete('expenses/{expense}/receipt', [ExpenseController::class, 'removeReceipt']);
         Route::get('expenses/{expense}/receipt', [ExpenseController::class, 'downloadReceipt']);
 
@@ -86,7 +86,7 @@ Route::prefix('v1')->middleware(['api', 'resolve-tenant'])->group(function (): v
 
         // Bank Connections
         Route::apiResource('bank-connections', BankConnectionController::class);
-        Route::post('bank-connections/{connection}/sync', [BankConnectionController::class, 'sync']);
+        Route::post('bank-connections/{bankConnection}/sync', [BankConnectionController::class, 'sync']);
 
         // Expense Import
         Route::post('expenses/import/preview', [ExpenseImportController::class, 'previewCsv']);

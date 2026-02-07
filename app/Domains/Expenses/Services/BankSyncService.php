@@ -16,8 +16,8 @@ class BankSyncService
     public function syncTransactions(BankConnection $connection): int
     {
         $response = Http::timeout(20)->post($this->plaidUrl('/transactions/sync'), [
-            'client_id' => (string) config('services.plaid.client_id'),
-            'secret' => (string) config('services.plaid.secret'),
+            'client_id' => (string) \config('services.plaid.client_id'),
+            'secret' => (string) \config('services.plaid.secret'),
             'access_token' => (string) $connection->access_token,
         ]);
 
@@ -40,7 +40,7 @@ class BankSyncService
                 [
                     'amount' => (int) round($amount * 100),
                     'currency_code' => (string) ($transaction['iso_currency_code'] ?? 'USD'),
-                    'date' => (string) ($transaction['date'] ?? now()->toDateString()),
+                    'date' => (string) ($transaction['date'] ?? \now()->toDateString()),
                     'name' => (string) ($transaction['name'] ?? 'Bank Transaction'),
                     'merchant_name' => isset($transaction['merchant_name']) ? (string) $transaction['merchant_name'] : null,
                     'category' => isset($transaction['category']) ? (array) $transaction['category'] : null,
@@ -51,7 +51,7 @@ class BankSyncService
             $synced++;
         }
 
-        $connection->last_sync_at = now();
+        $connection->last_sync_at = \now();
         $connection->save();
 
         return $synced;
@@ -60,12 +60,12 @@ class BankSyncService
     public function createLinkToken(): string
     {
         $response = Http::timeout(20)->post($this->plaidUrl('/link/token/create'), [
-            'client_id' => (string) config('services.plaid.client_id'),
-            'secret' => (string) config('services.plaid.secret'),
+            'client_id' => (string) \config('services.plaid.client_id'),
+            'secret' => (string) \config('services.plaid.secret'),
             'client_name' => 'OpenBooks',
             'language' => 'en',
             'country_codes' => ['US'],
-            'user' => ['client_user_id' => (string) auth()->id()],
+            'user' => ['client_user_id' => (string) \auth()->id()],
             'products' => ['transactions'],
         ]);
 
@@ -82,8 +82,8 @@ class BankSyncService
     public function exchangePublicToken(string $publicToken): array
     {
         $response = Http::timeout(20)->post($this->plaidUrl('/item/public_token/exchange'), [
-            'client_id' => (string) config('services.plaid.client_id'),
-            'secret' => (string) config('services.plaid.secret'),
+            'client_id' => (string) \config('services.plaid.client_id'),
+            'secret' => (string) \config('services.plaid.secret'),
             'public_token' => $publicToken,
         ]);
 
@@ -137,7 +137,7 @@ class BankSyncService
 
     private function plaidUrl(string $path): string
     {
-        $baseUrl = rtrim((string) config('services.plaid.base_url', 'https://sandbox.plaid.com'), '/');
+        $baseUrl = rtrim((string) \config('services.plaid.base_url', 'https://sandbox.plaid.com'), '/');
 
         return $baseUrl.$path;
     }

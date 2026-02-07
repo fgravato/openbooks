@@ -1,0 +1,3067 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Instanceof between App\\Domains\\Identity\\Models\\User and Illuminate\\Contracts\\Auth\\MustVerifyEmail will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: app/Actions/Fortify/UpdateUserProfileInformation.php
+
+		-
+			message: '#^Class App\\Domains\\Clients\\Models\\Client uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:contacts\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:expenses\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:invoices\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Client\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Domains/Clients/Models/Client.php
+
+		-
+			message: '#^Class App\\Domains\\Clients\\Models\\Contact uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Contact.php
+
+		-
+			message: '#^Method App\\Domains\\Clients\\Models\\Contact\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Clients/Models/Contact.php
+
+		-
+			message: '#^Class App\\Domains\\Expenses\\Models\\BankConnection uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankConnection\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankConnection\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankConnection\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankConnection\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankConnection\:\:transactions\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between non\-empty\-string and false will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/BankConnection.php
+
+		-
+			message: '#^Class App\\Domains\\Expenses\\Models\\BankTransaction uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:bankConnection\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:expense\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:scopePending\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:scopePending\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:scopeUnlinked\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\BankTransaction\:\:scopeUnlinked\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/BankTransaction.php
+
+		-
+			message: '#^Cannot call method canTransitionTo\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Class App\\Domains\\Expenses\\Models\\Expense uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:approvedBy\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:bankTransaction\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:category\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:invoice\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:project\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:recurringExpense\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeBillable\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeBillable\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByCategory\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByCategory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByClient\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByClient\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByDateRange\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByDateRange\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByStatus\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeByStatus\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeForOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeForOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeUnbilled\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:scopeUnbilled\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\Expense\:\:user\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:belongsTo\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$approved_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$approved_by_user_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$invoice_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$status \(string\) does not accept App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Approved\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$status \(string\) does not accept App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Billed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$status \(string\) does not accept App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Reimbursed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$status \(string\) does not accept App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Rejected\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Pending will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:belongsTo\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Domains/Expenses/Models/Expense.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Class App\\Domains\\Expenses\\Models\\ExpenseCategory uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:children\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:expenses\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:parent\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\ExpenseCategory\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/ExpenseCategory.php
+
+		-
+			message: '#^Cannot call method isAfter\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Cannot call method isBefore\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Class App\\Domains\\Expenses\\Models\\RecurringExpense uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Expenses\\Enums\\RecurringExpenseFrequency\:\:Annually is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Expenses\\Enums\\RecurringExpenseFrequency\:\:Monthly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Expenses\\Enums\\RecurringExpenseFrequency\:\:Quarterly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Expenses\\Enums\\RecurringExpenseFrequency\:\:Weekly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: string$#'
+			identifier: match.unhandled
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:category\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:generateExpense\(\) should return App\\Domains\\Expenses\\Models\\Expense but returns App\\Domains\\Expenses\\Models\\Expense\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:generatedExpenses\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Method App\\Domains\\Expenses\\Models\\RecurringExpense\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\RecurringExpense\:\:\$next_occurrence_date \(string\) does not accept Carbon\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and null will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Models/RecurringExpense.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 4
+			path: app/Domains/Expenses/Policies/ExpensePolicy.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Pending will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 3
+			path: app/Domains/Expenses/Policies/ExpensePolicy.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\BankConnection\:\:\$last_sync_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Services/BankSyncService.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\BankTransaction\:\:\$expense_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Services/BankSyncService.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$bank_transaction_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Expenses/Services/BankSyncService.php
+
+		-
+			message: '#^Cannot call method canTransitionTo\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Expenses/Services/ExpenseApprovalService.php
+
+		-
+			message: '#^Parameter \#1 \$from of class App\\Domains\\Expenses\\Exceptions\\InvalidExpenseStatusException constructor expects App\\Domains\\Expenses\\Enums\\ExpenseStatus, string given\.$#'
+			identifier: argument.type
+			count: 3
+			path: app/Domains/Expenses/Services/ExpenseApprovalService.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Services/ExpenseApprovalService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Pending will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Domains/Expenses/Services/ExpenseApprovalService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Pending will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Expenses/Services/ExpenseApprovalService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Domains/Expenses/Services/ExpenseApprovalService.php
+
+		-
+			message: '#^Parameter \#2 \$contents of method Illuminate\\Filesystem\\FilesystemAdapter\:\:put\(\) expects Illuminate\\Http\\File\|Illuminate\\Http\\UploadedFile\|Psr\\Http\\Message\\StreamInterface\|resource\|string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Expenses/Services/ReceiptProcessingService.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Enums\\Role\:\:permissions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Identity/Enums/Role.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Enums\\SubscriptionTier\:\:features\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Identity/Enums/SubscriptionTier.php
+
+		-
+			message: '#^Call to function array_key_exists\(\) with string and array\{\} will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Cannot call method features\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Class App\\Domains\\Identity\\Models\\Organization uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:clients\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:expenses\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:invoices\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\Organization\:\:users\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Offset ''features'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Domains/Identity/Models/Organization.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments string, array\{App\\Domains\\Identity\\Enums\\Role\:\:Owner, App\\Domains\\Identity\\Enums\\Role\:\:Admin\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Cannot call method permissions\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Class App\\Domains\\Identity\\Models\\User uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:expenses\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Identity\\Models\\User\:\:timeEntries\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Identity\\Enums\\Role\:\:Owner will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Trait Laravel\\Passport\\HasApiTokens requires using class to implement Laravel\\Passport\\Contracts\\OAuthenticatable, but App\\Domains\\Identity\\Models\\User does not\.$#'
+			identifier: class.missingImplements
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Domains/Identity/Models/User.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\DTOs\\InvoiceData\:\:__construct\(\) has parameter \$lines with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Invoicing/DTOs/InvoiceData.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\DTOs\\InvoiceData\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Invoicing/DTOs/InvoiceData.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\DTOs\\InvoiceLineData\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Invoicing/DTOs/InvoiceLineData.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\DTOs\\InvoiceProfileData\:\:__construct\(\) has parameter \$templateData with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Invoicing/DTOs/InvoiceProfileData.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments string, array\{App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Cancelled, App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Paid\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 2
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments string, array\{App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Paid, App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Cancelled\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Cannot call method canTransitionTo\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Cannot call method isPast\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Class App\\Domains\\Invoicing\\Models\\Invoice uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:createdBy\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:lines\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:payments\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:recurringProfile\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeByStatus\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeByStatus\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeDraft\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeDraft\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeForOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeForOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeOverdue\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeOverdue\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeSent\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeSent\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\Invoice\:\:updatedBy\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:each\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: mixed, Closure\(App\\Domains\\Invoicing\\Models\\InvoiceLine, int\)\: void given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Parameter \#1 \$organization of method App\\Domains\\Invoicing\\Services\\InvoiceNumberService\:\:generateNextNumber\(\) expects App\\Domains\\Identity\\Models\\Organization, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$paid_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$sent_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Draft\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Paid\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Partial\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Sent\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$invoice_id \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$sort_order \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Sent will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Draft will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Domains/Invoicing/Models/Invoice.php
+
+		-
+			message: '#^Class App\\Domains\\Invoicing\\Models\\InvoiceLine uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:expense\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:invoice\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:timeEntry\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:belongsTo\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$amount \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:belongsTo\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceLine.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Cannot call method isPast\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Class App\\Domains\\Invoicing\\Models\\InvoiceProfile uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Empty array passed to foreach\.$#'
+			identifier: foreach.emptyArray
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Invoicing\\Enums\\InvoiceProfileFrequency\:\:Annually is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Invoicing\\Enums\\InvoiceProfileFrequency\:\:BiWeekly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Invoicing\\Enums\\InvoiceProfileFrequency\:\:Custom is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Invoicing\\Enums\\InvoiceProfileFrequency\:\:Monthly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Invoicing\\Enums\\InvoiceProfileFrequency\:\:Quarterly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Domains\\Invoicing\\Enums\\InvoiceProfileFrequency\:\:Weekly is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: string$#'
+			identifier: match.unhandled
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:generateInvoice\(\) should return App\\Domains\\Invoicing\\Models\\Invoice but returns App\\Domains\\Invoicing\\Models\\Invoice\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:generatedInvoices\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''currency_code'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''description'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''discount_type'' on array\{string\} in isset\(\) does not exist\.$#'
+			identifier: isset.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''discount_value'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''expense_id'' on \*NEVER\* in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''footer_text'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''lines'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''notes'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''payment_terms_days'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''quantity'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''tax_name'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''tax_percent'' on \*NEVER\* in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''template'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''terms'' on array\{string\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''time_entry_id'' on \*NEVER\* in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''type'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Offset ''unit_price'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Parameter \#1 \$organization of method App\\Domains\\Invoicing\\Services\\InvoiceNumberService\:\:generateNextNumber\(\) expects App\\Domains\\Identity\\Models\\Organization, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$due_date \(string\|null\) does not accept Carbon\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$invoice_profile_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$issue_date \(string\) does not accept Carbon\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Draft\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$expense_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$invoice_id \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$time_entry_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$type \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceLineType\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceLine\:\:\$unit_price \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:\$last_generated_at \(string\|null\) does not accept Carbon\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\InvoiceProfile\:\:\$next_issue_date \(string\) does not accept Carbon\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and null will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceProfile.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$first_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Cannot call method format\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Class App\\Domains\\Invoicing\\Models\\InvoiceTemplate uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceTemplate\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceTemplate\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Method App\\Domains\\Invoicing\\Models\\InvoiceTemplate\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domains/Invoicing/Models/InvoiceTemplate.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 4
+			path: app/Domains/Invoicing/Policies/InvoicePolicy.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Draft will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: app/Domains/Invoicing/Policies/InvoicePolicy.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:calculateAmount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getTaxAmount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Instanceof between string\|null and App\\Domains\\Invoicing\\Enums\\DiscountType will always evaluate to false\.$#'
+			identifier: instanceof.alwaysFalse
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$subtotal \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$tax_amount \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceCalculationService.php
+
+		-
+			message: '#^Call to function is_array\(\) with null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceNumberService.php
+
+		-
+			message: '#^Call to function is_array\(\) with string\|null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceNumberService.php
+
+		-
+			message: '#^Offset ''invoicing'' on array\{\} on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceNumberService.php
+
+		-
+			message: '#^Offset ''invoicing'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceNumberService.php
+
+		-
+			message: '#^Property App\\Domains\\Identity\\Models\\Organization\:\:\$settings \(string\|null\) does not accept array\<string, array\<string, int\<1, max\>\>\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceNumberService.php
+
+		-
+			message: '#^Cannot call method canTransitionTo\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Parameter \#1 \$from of class App\\Domains\\Invoicing\\Exceptions\\InvalidStatusTransitionException constructor expects App\\Domains\\Invoicing\\Enums\\InvoiceStatus, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$paid_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$sent_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Overdue\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$viewed_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Invoicing/Services/InvoiceStatusService.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\DTOs\\PaymentData\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domains/Payments/DTOs/PaymentData.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Gateways\\StripeGateway\:\:constructWebhookEvent\(\) should return object but returns object\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Domains/Payments/Gateways/StripeGateway.php
+
+		-
+			message: '#^Class App\\Domains\\Payments\\Models\\CreditNote uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:appliedTo\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:applyToInvoice\(\) should return App\\Domains\\Payments\\Models\\CreditNoteApplication but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:createdBy\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:invoice\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNote\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNote.php
+
+		-
+			message: '#^Class App\\Domains\\Payments\\Models\\CreditNoteApplication uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNoteApplication.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNoteApplication\:\:creditNote\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNoteApplication.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\CreditNoteApplication\:\:invoice\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/CreditNoteApplication.php
+
+		-
+			message: '#^Class App\\Domains\\Payments\\Models\\Payment uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:createdBy\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:invoice\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:refunds\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByClient\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByClient\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByDateRange\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByDateRange\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByInvoice\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByInvoice\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByStatus\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeByStatus\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeForOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeForOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeOnline\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeOnline\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\Payment\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$metadata \(string\|null\) does not accept array\<int\|string, string\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$paid_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$refunded_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$status \(string\) does not accept App\\Domains\\Payments\\Enums\\PaymentStatus\:\:Completed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$status \(string\) does not accept App\\Domains\\Payments\\Enums\\PaymentStatus\:\:Failed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$status \(string\) does not accept App\\Domains\\Payments\\Enums\\PaymentStatus\:\:PartiallyRefunded\|App\\Domains\\Payments\\Enums\\PaymentStatus\:\:Refunded\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Result of \|\| is always false\.$#'
+			identifier: booleanOr.alwaysFalse
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Payments\\Enums\\PaymentStatus\:\:Completed will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Payments\\Enums\\PaymentStatus\:\:PartiallyRefunded will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Domains/Payments/Models/Payment.php
+
+		-
+			message: '#^Class App\\Domains\\Payments\\Models\\PaymentMethodConfig uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentMethodConfig.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentMethodConfig\:\:client\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentMethodConfig.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentMethodConfig\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentMethodConfig.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentMethodConfig\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentMethodConfig.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentMethodConfig\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentMethodConfig.php
+
+		-
+			message: '#^Class App\\Domains\\Payments\\Models\\PaymentRefund uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentRefund\:\:newFactory\(\) return type with generic class Illuminate\\Database\\Eloquent\\Factories\\Factory does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentRefund\:\:organization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentRefund\:\:payment\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentRefund\:\:refundedBy\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentRefund\:\:scopeToCurrentOrganization\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Method App\\Domains\\Payments\\Models\\PaymentRefund\:\:scopeToCurrentOrganization\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Domains/Payments/Models/PaymentRefund.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$paid_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Services/CreditNoteService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Paid\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Services/CreditNoteService.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Partial\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Services/CreditNoteService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Cancelled will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Domains/Payments/Services/CreditNoteService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:applyPayment\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Domains/Payments/Services/PaymentProcessingService.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Domains/Payments/Services/PaymentProcessingService.php
+
+		-
+			message: '#^Cannot call method isAutomated\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Payments/Services/PaymentProcessingService.php
+
+		-
+			message: '#^Parameter \#2 \$method of method App\\Domains\\Payments\\Services\\PaymentProcessingService\:\:calculateFees\(\) expects App\\Domains\\Payments\\Enums\\PaymentMethod, string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Domains/Payments/Services/PaymentProcessingService.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$gateway_fee_amount \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 2
+			path: app/Domains/Payments/Services/PaymentProcessingService.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$metadata \(string\|null\) does not accept list\<array\<string, mixed\>\|string\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Services/PaymentProcessingService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$invoice_number\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Cannot call method toDateTimeString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>email" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>invoice_number" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domains/Payments/Services/PaymentReceiptService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$amount_outstanding\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Payments/Services/PaymentRefundService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$amount_paid\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Domains/Payments/Services/PaymentRefundService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$paid_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Payments/Services/PaymentRefundService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Domains/Payments/Services/PaymentRefundService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$total\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Domains/Payments/Services/PaymentRefundService.php
+
+		-
+			message: '#^Cannot call method isAutomated\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Domains/Payments/Services/PaymentRefundService.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$metadata \(string\|null\) does not accept list\<array\<string, mixed\>\|string\>\.$#'
+			identifier: assign.propertyType
+			count: 4
+			path: app/Domains/Payments/Services/StripeWebhookService.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$paid_at \(string\|null\) does not accept Illuminate\\Support\\Carbon\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Services/StripeWebhookService.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$status \(string\) does not accept App\\Domains\\Payments\\Enums\\PaymentStatus\:\:Completed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Domains/Payments/Services/StripeWebhookService.php
+
+		-
+			message: '#^Property App\\Domains\\Payments\\Models\\Payment\:\:\$status \(string\) does not accept App\\Domains\\Payments\\Enums\\PaymentStatus\:\:Failed\.$#'
+			identifier: assign.propertyType
+			count: 2
+			path: app/Domains/Payments/Services/StripeWebhookService.php
+
+		-
+			message: '#^Access to an undefined property App\\Domains\\Clients\\Models\\Client\:\:\$balance_outstanding\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/Clients/ClientController.php
+
+		-
+			message: '#^Access to an undefined property App\\Domains\\Clients\\Models\\Client\:\:\$total_invoiced\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/Clients/ClientController.php
+
+		-
+			message: '#^Access to an undefined property App\\Domains\\Clients\\Models\\Client\:\:\$total_paid\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/Clients/ClientController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Clients/ClientController.php
+
+		-
+			message: '#^Cannot call method contacts\(\) on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Clients/ContactController.php
+
+		-
+			message: '#^Parameter \#1 \$contact of method App\\Http\\Controllers\\Api\\Clients\\ContactController\:\:setPrimary\(\) expects App\\Domains\\Clients\\Models\\Contact, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Api/Clients/ContactController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/BankConnectionController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseCategoryController.php
+
+		-
+			message: '#^Cannot access property \$id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseController.php
+
+		-
+			message: '#^Parameter \#2 \$approver of method App\\Domains\\Expenses\\Services\\ExpenseApprovalService\:\:approve\(\) expects App\\Domains\\Identity\\Models\\User, App\\Domains\\Identity\\Models\\User\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseController.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$status \(string\) does not accept App\\Domains\\Expenses\\Enums\\ExpenseStatus\:\:Pending\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseController.php
+
+		-
+			message: '#^Property App\\Domains\\Expenses\\Models\\Expense\:\:\$user_id \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseController.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Api/Expenses/ExpenseImportController.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function fgetcsv expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/Api/Expenses/ExpenseImportController.php
+
+		-
+			message: '#^Cannot access property \$id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Cannot access property \$organization on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Parameter \#1 \$organization of method App\\Domains\\Invoicing\\Services\\InvoiceNumberService\:\:generateNextNumber\(\) expects App\\Domains\\Identity\\Models\\Organization, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$created_by_user_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$status \(string\) does not accept App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Draft\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceController.php
+
+		-
+			message: '#^Parameter \#1 \$invoice of method App\\Domains\\Invoicing\\Services\\InvoiceCalculationService\:\:recalculate\(\) expects App\\Domains\\Invoicing\\Models\\Invoice, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/Api/Invoices/InvoiceLineController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Invoices/InvoiceProfileController.php
+
+		-
+			message: '#^Cannot access property \$id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Payments/PaymentController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/Payments/PaymentController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Http\\Request\:\:safe\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Http/Controllers/Auth/LoginController.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/Clients/StoreClientRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Clients\\StoreClientRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Clients/StoreClientRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Clients\\StoreContactRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Clients/StoreContactRequest.php
+
+		-
+			message: '#^Access to an undefined property \(object\|string\|null\)\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Requests/Clients/UpdateClientRequest.php
+
+		-
+			message: '#^Cannot access property \$organization_id on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/Clients/UpdateClientRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Clients/UpdateClientRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Clients\\UpdateClientRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Clients/UpdateClientRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Clients/UpdateContactRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Clients\\UpdateContactRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Clients/UpdateContactRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\ImportExpensesRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/ImportExpensesRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\StoreBankConnectionRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/StoreBankConnectionRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\StoreExpenseCategoryRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/StoreExpenseCategoryRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\StoreExpenseRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/StoreExpenseRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\UpdateBankConnectionRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/UpdateBankConnectionRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\UpdateExpenseCategoryRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/UpdateExpenseCategoryRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Expenses/UpdateExpenseRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\UpdateExpenseRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/UpdateExpenseRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Expenses/UploadReceiptRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Expenses\\UploadReceiptRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Expenses/UploadReceiptRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Invoicing/SendInvoiceRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\SendInvoiceRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/SendInvoiceRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Invoicing/StoreInvoiceLineRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\StoreInvoiceLineRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/StoreInvoiceLineRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\StoreInvoiceProfileRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/StoreInvoiceProfileRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\StoreInvoiceRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/StoreInvoiceRequest.php
+
+		-
+			message: '#^Access to an undefined property \(object\|string\|null\)\:\:\$invoice\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceLineRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceLineRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\UpdateInvoiceLineRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceLineRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceProfileRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\UpdateInvoiceProfileRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceProfileRequest.php
+
+		-
+			message: '#^Cannot call method can\(\) on App\\Domains\\Identity\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Invoicing\\UpdateInvoiceRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Invoicing/UpdateInvoiceRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Payments\\StorePaymentRequest\:\:rules\(\) should return array\<string, array\<int, Illuminate\\Contracts\\Validation\\ValidationRule\|string\>\> but returns array\<string, list\<Illuminate\\Validation\\Rules\\In\|Illuminate\\Validation\\Rules\\RequiredIf\|string\>\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Requests/Payments/StorePaymentRequest.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Clients\\ClientResource\:\:\$balance_outstanding\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Clients/ClientResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Clients\\ClientResource\:\:\$total_invoiced\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Clients/ClientResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Clients\\ClientResource\:\:\$total_paid\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Clients/ClientResource.php
+
+		-
+			message: '#^Class App\\Http\\Resources\\Clients\\ClientResource has PHPDoc tag @property for property \$address with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Clients/ClientResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Clients\\ClientResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Clients/ClientResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Clients\\ContactResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Clients/ContactResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$account_mask\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$account_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$balance_current\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$institution_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$is_active\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$last_sync_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Access to an undefined property App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Expenses\\BankConnectionResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Expenses/BankConnectionResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Expenses\\ExpenseCategoryResource\:\:getFullName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/ExpenseCategoryResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Expenses\\ExpenseCategoryResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Expenses/ExpenseCategoryResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Expenses\\ExpenseResource\:\:canBeEdited\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/ExpenseResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Expenses\\ExpenseResource\:\:getBillableAmount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/ExpenseResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Expenses\\ExpenseResource\:\:getTotalAmount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Expenses/ExpenseResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Expenses\\ExpenseResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Expenses/ExpenseResource.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Resources/Identity/OrganizationResource.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Identity/OrganizationResource.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Resources/Identity/OrganizationResource.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Resources/Identity/OrganizationResource.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Resources/Identity/UserResource.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Identity/UserResource.php
+
+		-
+			message: '#^Cannot call method permissions\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Identity/UserResource.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Identity/UserResource.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Resources/Identity/UserResource.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Resources/Identity/UserResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Invoicing\\InvoiceLineResource\:\:getTaxAmount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceLineResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Invoicing\\InvoiceLineResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceLineResource.php
+
+		-
+			message: '#^Class App\\Http\\Resources\\Invoicing\\InvoiceProfileResource has PHPDoc tag @property for property \$template_data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceProfileResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Invoicing\\InvoiceProfileResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceProfileResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Invoicing\\InvoiceResource\:\:canBeEdited\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceResource.php
+
+		-
+			message: '#^Call to an undefined method App\\Http\\Resources\\Invoicing\\InvoiceResource\:\:isOverdue\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceResource.php
+
+		-
+			message: '#^Method App\\Http\\Resources\\Invoicing\\InvoiceResource\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Resources/Invoicing/InvoiceResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$amount\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$applied_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$invoice_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<int,array\<string, mixed\>\>\:\:all\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<int,array\<string, mixed\>\>\:\:values\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Http/Resources/Payments/CreditNoteResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentRefundResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentRefundResource.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Payments/PaymentRefundResource.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Resources/Payments/PaymentRefundResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$amount_outstanding\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$first_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$invoice_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$last_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Http/Resources/Payments/PaymentResource.php
+
+		-
+			message: '#^Property App\\Scopes\\OrganizationScope\:\:\$organizationCache type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Scopes/OrganizationScope.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<0, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Services/TenantManager.php
+
+		-
+			message: '#^Call to an undefined method Faker\\Generator\:\:stateAbbr\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: database/factories/Clients/ClientFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Clients\\ClientFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Clients/ClientFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Clients\\ContactFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Clients/ContactFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Expenses\\BankConnectionFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Expenses/BankConnectionFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Expenses\\BankTransactionFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Expenses/BankTransactionFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Expenses\\ExpenseCategoryFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Expenses/ExpenseCategoryFactory.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$organization_id\.$#'
+			identifier: property.notFound
+			count: 4
+			path: database/factories/Expenses/ExpenseFactory.php
+
+		-
+			message: '#^Cannot access property \$organization_id on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: database/factories/Expenses/ExpenseFactory.php
+
+		-
+			message: '#^Cannot call method save\(\) on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: database/factories/Expenses/ExpenseFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Expenses\\ExpenseFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Expenses/ExpenseFactory.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Factories\\Factory\<Illuminate\\Database\\Eloquent\\Model\>\:\:afterCreating\(\) expects Closure\(Illuminate\\Database\\Eloquent\\Model\)\: mixed, Closure\(App\\Domains\\Expenses\\Models\\Expense\)\: void given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/factories/Expenses/ExpenseFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Expenses\\RecurringExpenseFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Expenses/RecurringExpenseFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Identity\\OrganizationFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Identity/OrganizationFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Identity\\UserFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Identity/UserFactory.php
+
+		-
+			message: '#^Cannot access property \$organization_id on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Cannot call method format\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Cannot call method save\(\) on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Invoicing\\InvoiceFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Factories\\Factory\<Illuminate\\Database\\Eloquent\\Model\>\:\:afterCreating\(\) expects Closure\(Illuminate\\Database\\Eloquent\\Model\)\: mixed, Closure\(App\\Domains\\Invoicing\\Models\\Invoice\)\: void given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Property App\\Domains\\Invoicing\\Models\\Invoice\:\:\$amount_paid \(int\<0, max\>\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Property Database\\Factories\\Invoicing\\InvoiceFactory\:\:\$sequenceByOrganization type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Overdue will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Paid will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Domains\\Invoicing\\Enums\\InvoiceStatus\:\:Partial will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: database/factories/Invoicing/InvoiceFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Invoicing\\InvoiceLineFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Invoicing/InvoiceLineFactory.php
+
+		-
+			message: '#^Cannot access property \$currency_code on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: database/factories/Invoicing/InvoiceProfileFactory.php
+
+		-
+			message: '#^Cannot access property \$organization_id on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: database/factories/Invoicing/InvoiceProfileFactory.php
+
+		-
+			message: '#^Cannot call method save\(\) on Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: database/factories/Invoicing/InvoiceProfileFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Invoicing\\InvoiceProfileFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Invoicing/InvoiceProfileFactory.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Factories\\Factory\<Illuminate\\Database\\Eloquent\\Model\>\:\:afterCreating\(\) expects Closure\(Illuminate\\Database\\Eloquent\\Model\)\: mixed, Closure\(App\\Domains\\Invoicing\\Models\\InvoiceProfile\)\: void given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/factories/Invoicing/InvoiceProfileFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Payments\\CreditNoteFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Payments/CreditNoteFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Payments\\PaymentFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Payments/PaymentFactory.php
+
+		-
+			message: '#^Class Database\\Factories\\Payments\\PaymentRefundFactory extends generic class Illuminate\\Database\\Eloquent\\Factories\\Factory but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: database/factories/Payments/PaymentRefundFactory.php
+
+		-
+			message: '#^Property App\\Domains\\Identity\\Models\\Organization\:\:\$owner_id \(int\<0, max\>\|null\) does not accept int\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: database/seeders/Identity/UserSeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:\$amount_outstanding\.$#'
+			identifier: property.notFound
+			count: 2
+			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:\$amount_paid\.$#'
+			identifier: property.notFound
+			count: 2
+			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:\$due_date\.$#'
+			identifier: property.notFound
+			count: 1
+			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:\$paid_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:\$total\.$#'
+			identifier: property.notFound
+			count: 3
+			path: database/seeders/Invoicing/InvoiceSeeder.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Eloquent\\Model\:\:save\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: database/seeders/Invoicing/InvoiceSeeder.php

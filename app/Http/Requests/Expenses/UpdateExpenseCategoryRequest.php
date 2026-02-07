@@ -10,7 +10,7 @@ class UpdateExpenseCategoryRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return $this->user()->can('update', $this->route('category'));
+        return (bool) $this->user()?->hasPermission('expenses.manage');
     }
 
     public function rules(): array

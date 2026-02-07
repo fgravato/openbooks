@@ -15,7 +15,7 @@ class CreditNoteApplication extends Model
 
     protected $table = 'credit_note_applications';
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'credit_note_id',

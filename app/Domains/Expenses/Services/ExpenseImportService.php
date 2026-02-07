@@ -15,7 +15,7 @@ use RuntimeException;
 class ExpenseImportService
 {
     /**
-     * @param array<string, string> $mappings
+     * @param  array<string, string>  $mappings
      * @return array{imported:int, errors:array<int, string>}
      */
     public function importFromCsv(string $filePath, int $categoryId, array $mappings): array
@@ -47,8 +47,15 @@ class ExpenseImportService
                 $row[(string) $column] = $raw[$index] ?? null;
             }
 
-            if (! $this->validateRow($row)) {
+            $normalized = [
+                'vendor' => $row[$mappings['vendor'] ?? 'vendor'] ?? null,
+                'amount' => $row[$mappings['amount'] ?? 'amount'] ?? null,
+                'date' => $row[$mappings['date'] ?? 'date'] ?? null,
+            ];
+
+            if (! $this->validateRow($normalized)) {
                 $errors[] = "Line {$lineNumber}: invalid row data.";
+
                 continue;
             }
 
@@ -66,7 +73,7 @@ class ExpenseImportService
                 'tax_name' => null,
                 'tax_percent' => 0,
                 'tax_amount' => 0,
-                'date' => new DateTime((string) ($row[$mappings['date'] ?? 'date'] ?? now()->toDateString())),
+                'date' => new DateTime((string) ($row[$mappings['date'] ?? 'date'] ?? \now()->toDateString())),
                 'status' => ExpenseStatus::Pending,
                 'is_billable' => false,
                 'is_reimbursable' => false,
@@ -105,7 +112,7 @@ class ExpenseImportService
     }
 
     /**
-     * @param array<string, mixed> $row
+     * @param  array<string, mixed>  $row
      */
     public function validateRow(array $row): bool
     {

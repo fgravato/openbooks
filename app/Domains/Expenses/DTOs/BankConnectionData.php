@@ -16,8 +16,7 @@ readonly class BankConnectionData
         public string $itemId,
         public string $accountMask,
         public BankAccountType $accountType,
-    ) {
-    }
+    ) {}
 
     public static function fromRequest(Request $request): self
     {

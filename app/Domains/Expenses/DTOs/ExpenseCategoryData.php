@@ -13,8 +13,7 @@ readonly class ExpenseCategoryData
         public ?string $description,
         public ?int $parentId,
         public string $color,
-    ) {
-    }
+    ) {}
 
     public static function fromRequest(Request $request): self
     {

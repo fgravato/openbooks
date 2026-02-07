@@ -22,8 +22,7 @@ class PasswordResetController extends Controller
         private readonly ResponseFactory $inertia,
         private readonly PasswordBroker $passwordBroker,
         private readonly Hasher $hasher,
-    ) {
-    }
+    ) {}
 
     public function forgotPassword(ForgotPasswordRequest $request): JsonResponse|RedirectResponse
     {

@@ -11,6 +11,5 @@ readonly class PaymentResult
         public ?string $transactionId = null,
         public ?string $errorMessage = null,
         public ?string $status = null,
-    ) {
-    }
+    ) {}
 }

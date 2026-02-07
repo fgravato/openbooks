@@ -17,8 +17,7 @@ readonly class InvoiceLineData
         public ?float $taxPercent,
         public ?int $expenseId,
         public ?int $timeEntryId,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): self
     {

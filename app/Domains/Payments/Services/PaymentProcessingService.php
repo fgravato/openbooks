@@ -15,12 +15,10 @@ use Illuminate\Support\Facades\Log;
 
 class PaymentProcessingService
 {
-    public function __construct(private readonly PaymentGatewayInterface $gateway)
-    {
-    }
+    public function __construct(private readonly PaymentGatewayInterface $gateway) {}
 
     /**
-     * @param array<string, mixed> $gatewayData
+     * @param  array<string, mixed>  $gatewayData
      */
     public function processPayment(Payment $payment, array $gatewayData): PaymentResult
     {

@@ -21,8 +21,7 @@ readonly class InvoiceProfileData
         public bool $autoSend,
         public array $templateData,
         public bool $isActive,
-    ) {
-    }
+    ) {}
 
     public static function fromRequest(Request $request): self
     {

@@ -27,9 +27,7 @@ readonly class FeatureGate
         'priority_support',
     ];
 
-    public function __construct(private TenantManager $tenantManager)
-    {
-    }
+    public function __construct(private TenantManager $tenantManager) {}
 
     public function isEnabled(string $feature, ?Organization $org = null): bool
     {

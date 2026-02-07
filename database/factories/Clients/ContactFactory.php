@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Database\Factories\Clients;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Domains\Clients\Models\Client;
 use App\Domains\Clients\Models\Contact;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ContactFactory extends Factory
 {

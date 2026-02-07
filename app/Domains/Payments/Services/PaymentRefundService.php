@@ -4,20 +4,18 @@ declare(strict_types=1);
 
 namespace App\Domains\Payments\Services;
 
+use App\Domains\Invoicing\Enums\InvoiceStatus;
 use App\Domains\Payments\Exceptions\InvalidRefundAmountException;
 use App\Domains\Payments\Exceptions\PaymentProcessingException;
 use App\Domains\Payments\Gateways\PaymentGatewayInterface;
 use App\Domains\Payments\Models\Payment;
 use App\Domains\Payments\Models\PaymentRefund;
-use App\Domains\Invoicing\Enums\InvoiceStatus;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class PaymentRefundService
 {
-    public function __construct(private readonly PaymentGatewayInterface $gateway)
-    {
-    }
+    public function __construct(private readonly PaymentGatewayInterface $gateway) {}
 
     public function refundPayment(Payment $payment, int $amount, string $reason): PaymentRefund
     {

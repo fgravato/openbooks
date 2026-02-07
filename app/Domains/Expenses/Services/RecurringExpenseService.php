@@ -13,7 +13,7 @@ class RecurringExpenseService
     {
         RecurringExpense::query()
             ->where('is_active', true)
-            ->whereDate('next_occurrence_date', '<=', now()->toDateString())
+            ->whereDate('next_occurrence_date', '<=', \now()->toDateString())
             ->get()
             ->each(function (RecurringExpense $profile): void {
                 if (! $profile->shouldGenerate()) {

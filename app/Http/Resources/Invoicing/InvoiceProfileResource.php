@@ -33,7 +33,7 @@ class InvoiceProfileResource extends JsonResource
             'occurrences_remaining' => $this->occurrences_remaining,
             'auto_send' => $this->auto_send,
             'is_active' => $this->is_active,
-            'is_paused' => !$this->is_active,
+            'is_paused' => ! $this->is_active,
             'template_data' => $this->template_data,
             'client' => new ClientResource($this->whenLoaded('client')),
             'last_generated_at' => $this->last_generated_at?->toDateString(),

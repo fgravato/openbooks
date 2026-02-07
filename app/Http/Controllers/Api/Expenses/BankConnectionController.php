@@ -7,9 +7,9 @@ namespace App\Http\Controllers\Api\Expenses;
 use App\Domains\Expenses\Models\BankConnection;
 use App\Domains\Expenses\Services\BankSyncService;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Expenses\BankConnectionResource;
 use App\Http\Requests\Expenses\StoreBankConnectionRequest;
 use App\Http\Requests\Expenses\UpdateBankConnectionRequest;
+use App\Http\Resources\Expenses\BankConnectionResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -36,7 +36,7 @@ class BankConnectionController extends Controller
     public function store(StoreBankConnectionRequest $request): JsonResponse
     {
         $tokenData = $this->bankSyncService->exchangePublicToken($request->public_token);
-        
+
         $connection = BankConnection::create([
             'organization_id' => $request->user()->organization_id,
             'name' => $request->name,
@@ -58,37 +58,38 @@ class BankConnectionController extends Controller
     /**
      * Show bank connection
      */
-    public function show(BankConnection $connection): BankConnectionResource
+    public function show(BankConnection $bankConnection): BankConnectionResource
     {
-        return new BankConnectionResource($connection);
+        return new BankConnectionResource($bankConnection);
     }
 
     /**
      * Update bank connection
      */
-    public function update(UpdateBankConnectionRequest $request, BankConnection $connection): BankConnectionResource
+    public function update(UpdateBankConnectionRequest $request, BankConnection $bankConnection): BankConnectionResource
     {
-        $connection->update($request->validated());
+        $bankConnection->update($request->validated());
 
-        return new BankConnectionResource($connection);
+        return new BankConnectionResource($bankConnection);
     }
 
     /**
      * Delete bank connection
      */
-    public function destroy(BankConnection $connection): JsonResponse
+    public function destroy(BankConnection $bankConnection): JsonResponse
     {
-        $connection->delete();
+        $bankConnection->delete();
+
         return response()->json(null, 204);
     }
 
     /**
      * Sync transactions
      */
-    public function sync(BankConnection $connection): JsonResponse
+    public function sync(BankConnection $bankConnection): JsonResponse
     {
-        $synced = $this->bankSyncService->syncTransactions($connection);
-        $matched = $this->bankSyncService->matchTransactionsToExpenses($connection);
+        $synced = $this->bankSyncService->syncTransactions($bankConnection);
+        $matched = $this->bankSyncService->matchTransactionsToExpenses($bankConnection);
 
         return response()->json([
             'message' => 'Bank sync completed.',

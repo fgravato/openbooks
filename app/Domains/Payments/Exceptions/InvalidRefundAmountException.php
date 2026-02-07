@@ -6,6 +6,4 @@ namespace App\Domains\Payments\Exceptions;
 
 use App\Exceptions\DomainException;
 
-class InvalidRefundAmountException extends DomainException
-{
-}
+class InvalidRefundAmountException extends DomainException {}

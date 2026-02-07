@@ -32,9 +32,9 @@ class ClientController extends Controller
         if ($request->has('search')) {
             $query->where(function ($q) use ($request) {
                 $q->where('first_name', 'like', "%{$request->search}%")
-                  ->orWhere('last_name', 'like', "%{$request->search}%")
-                  ->orWhere('company_name', 'like', "%{$request->search}%")
-                  ->orWhere('email', 'like', "%{$request->search}%");
+                    ->orWhere('last_name', 'like', "%{$request->search}%")
+                    ->orWhere('company_name', 'like', "%{$request->search}%")
+                    ->orWhere('email', 'like', "%{$request->search}%");
             });
         }
 
@@ -78,7 +78,7 @@ class ClientController extends Controller
     public function show(Client $client): ClientResource
     {
         $client->loadCount(['invoices', 'contacts']);
-        
+
         // Add stats manually if not using subqueries in show
         $client->total_invoiced = $client->invoices()->sum('total');
         $client->total_paid = $client->invoices()->sum('amount_paid');

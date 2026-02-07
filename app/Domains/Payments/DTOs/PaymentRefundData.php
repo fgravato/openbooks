@@ -10,6 +10,5 @@ readonly class PaymentRefundData
         public int $paymentId,
         public int $amount,
         public string $reason,
-    ) {
-    }
+    ) {}
 }

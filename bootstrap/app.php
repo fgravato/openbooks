@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 
-use App\Http\Middleware\HandleInertiaRequests;
-use App\Http\Middleware\ResolveTenant;
-use App\Http\Middleware\RequireOrganization;
 use App\Http\Middleware\CheckSubscription;
-use App\Http\Middleware\PreventRequestsDuringMaintenance;
-use App\Http\Middleware\TrustProxies;
+use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\RequireOrganization;
+use App\Http\Middleware\ResolveTenant;
 use App\Http\Middleware\ValidateSignature;
 use App\Providers\AuthServiceProvider;
 use App\Providers\FortifyServiceProvider;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Cookie\Middleware\EncryptCookies as FrameworkEncryptCookies;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Cookie\Middleware\EncryptCookies as FrameworkEncryptCookies;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -25,8 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->trustProxies(at: TrustProxies::class);
-        // $middleware->preventRequestsDuringMaintenance(PreventRequestsDuringMaintenance::class);
+        $middleware->trustProxies(at: '*');
 
         $middleware->web(append: [
             HandleInertiaRequests::class,

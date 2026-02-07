@@ -16,8 +16,7 @@ readonly class PaymentData
         public ?string $paymentMethodId,
         public ?string $notes,
         public ?array $metadata,
-    ) {
-    }
+    ) {}
 
     public static function fromRequest(Request $request): self
     {

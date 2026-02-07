@@ -29,7 +29,7 @@ class InvoiceLineController extends Controller
     public function store(StoreInvoiceLineRequest $request, Invoice $invoice): InvoiceLineResource
     {
         $line = $invoice->lines()->create($request->validated());
-        
+
         $this->calculationService->recalculate($invoice);
 
         return new InvoiceLineResource($line);
@@ -41,7 +41,7 @@ class InvoiceLineController extends Controller
     public function update(UpdateInvoiceLineRequest $request, InvoiceLine $line): InvoiceLineResource
     {
         $line->update($request->validated());
-        
+
         $this->calculationService->recalculate($line->invoice);
 
         return new InvoiceLineResource($line);
@@ -54,7 +54,7 @@ class InvoiceLineController extends Controller
     {
         $invoice = $line->invoice;
         $line->delete();
-        
+
         $this->calculationService->recalculate($invoice);
 
         return response()->json(null, 204);

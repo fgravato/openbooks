@@ -152,7 +152,7 @@ class ExpenseController extends Controller
     public function reject(Request $request, Expense $expense): ExpenseResource
     {
         $request->validate(['reason' => ['required', 'string']]);
-        
+
         $this->approvalService->reject($expense, $request->reason);
 
         return new ExpenseResource($expense);

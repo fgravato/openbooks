@@ -17,10 +17,9 @@ class HandleInertiaRequests extends Middleware
     public function __construct(
         private readonly TenantManager $tenantManager,
         private readonly FeatureGate $featureGate,
-    ) {
-    }
+    ) {}
 
-    protected string $rootView = 'app';
+    protected $rootView = 'app';
 
     public function version(Request $request): ?string
     {
@@ -44,7 +43,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'csrf_token' => csrf_token(),
             'ziggy' => static fn (): array => [
-                ...(new Ziggy())->toArray(),
+                ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
         ];

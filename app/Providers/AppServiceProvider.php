@@ -19,7 +19,5 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(PaymentGatewayInterface::class, StripeGateway::class);
     }
 
-    public function boot(): void
-    {
-    }
+    public function boot(): void {}
 }

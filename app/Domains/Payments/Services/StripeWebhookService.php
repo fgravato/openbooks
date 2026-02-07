@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 class StripeWebhookService
 {
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      */
     public function handleWebhook(array $payload): void
     {
@@ -28,7 +28,7 @@ class StripeWebhookService
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function handlePaymentIntentSucceeded(array $data): void
     {
@@ -53,7 +53,7 @@ class StripeWebhookService
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function handlePaymentIntentFailed(array $data): void
     {
@@ -77,7 +77,7 @@ class StripeWebhookService
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function handleChargeRefunded(array $data): void
     {
@@ -102,7 +102,7 @@ class StripeWebhookService
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function handleDisputeCreated(array $data): void
     {

@@ -28,8 +28,7 @@ class TwoFactorAuthController extends Controller
         private readonly SessionGuard $guard,
         private readonly Hasher $hasher,
         private readonly TwoFactorAuthenticationProvider $twoFactorAuthenticationProvider,
-    ) {
-    }
+    ) {}
 
     public function show2faForm(Request $request): Response
     {
@@ -163,7 +162,7 @@ class TwoFactorAuthController extends Controller
         $writer = new Writer(
             new ImageRenderer(
                 new RendererStyle(220),
-                new SvgImageBackEnd(),
+                new SvgImageBackEnd,
             ),
         );
 

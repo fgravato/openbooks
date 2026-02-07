@@ -24,7 +24,6 @@ return [
         Features::resetPasswords(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
-        // Features::passwordConfirmation(),
         Features::twoFactorAuthentication([
             'confirm' => true,
             'confirmPassword' => true,
